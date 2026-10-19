@@ -10,6 +10,7 @@ All geometric simulations and the original instrumental score are deterministic.
 from __future__ import annotations
 
 import argparse
+import bisect
 import json
 import math
 import os
@@ -52,7 +53,16 @@ SCENES = [
     ('14 / 重新出发', '世界依然会有意外', '防错、备用、缓冲，让一次偏离，不必成为终点。'),
     ('尾声', '准备的形状', '你不必预知每一次意外。你可以，让自己多一种选择。'),
 ]
-DURATION = len(SCENES) * 8
+PACINGS = {
+    'tight': [5, 5, 6, 6, 7, 6, 7, 8, 5, 5, 6, 8, 7, 6, 6, 7],
+    'original': [8] * len(SCENES),
+}
+SCENE_DURATIONS = PACINGS['tight']
+SCENE_STARTS = list(np.cumsum([0] + SCENE_DURATIONS[:-1]))
+DURATION = sum(SCENE_DURATIONS)
+
+def scene_at(time):
+    return min(len(SCENES)-1, max(0, bisect.bisect_right(SCENE_STARTS, time)-1))
 
 def clamp(x, a=0.0, b=1.0): return max(a, min(b, x))
 def ease(x):
@@ -304,7 +314,11 @@ def graphic(a,i,t):
         a.text('墨 菲 定 律',640,531,22,MUTED,alpha=ease((t-3)/1))
 
 def frame(time):
-    i=min(len(SCENES)-1,int(time/8));t=time-i*8
+    i=scene_at(time)
+    t=(time-SCENE_STARTS[i])*8/SCENE_DURATIONS[i]
+    # Retiming uses the original animation clock, so cached film and fresh
+    # procedural renders retain the same particles, camera and graphic actions.
+    time=i*8+t
     im=background().copy();a=Canvas(im)
     for x,y,r,phase in PARTICLES:
         xx=(x*W+math.sin(time*.08+phase*6)*16)%W
@@ -329,7 +343,7 @@ def frame(time):
     return im
 
 def synth_score(out,seconds):
-    """Original 90-BPM chamber-electronic score: felt keys, pads, bass and ticks."""
+    """Original chamber-electronic score with accents at actual scene changes."""
     sr=48000;n=int(sr*seconds)
     mix=np.zeros((n,2),dtype=np.float32)
     rng=np.random.default_rng(73)
@@ -356,27 +370,27 @@ def synth_score(out,seconds):
         mix[k:k+length,1]+=sig*math.sqrt((1+pan)/2)
     # D minor → B-flat → F → C; the ending resolves to D major.
     chords=[(50,57,62,65),(46,53,58,62),(41,48,57,60),(48,55,60,64)]
-    beat=2/3
+    beat=60/(104 if DURATION<128 else 90)
     for bar in range(math.ceil(seconds/(beat*4))):
-        start=bar*beat*4;section=int(start/8)
+        start=bar*beat*4;section=scene_at(start)
         chord=chords[(bar//3)%4]
-        if start>=120:chord=(50,57,62,66)
+        if start>=SCENE_STARTS[-1]:chord=(50,57,62,66)
         dynamic=.7 if section in (0,2,7,15) else 1
         for m in chord:note(start,4.4,m,.05*dynamic,(m%3-1)*.4,'pad')
         note(start,2.4,chord[0]-12,.13*dynamic,0,'bass')
         for step in range(8):
             m=chord[[0,2,1,3,2,1,3,2][step]]+12
             note(start+step*beat/2,2.1,m,.065*dynamic,(-.35 if step%2 else .35))
-        if 16<=start<120:
+        if SCENE_STARTS[2]<=start<SCENE_STARTS[-1]:
             for step in (0,2):note(start+step*beat,.2,37,.07,0,'tick')
-        if 40<=start<112:
+        if SCENE_STARTS[5]<=start<SCENE_STARTS[-2]:
             for step in (1,3):note(start+step*beat,.12,90,.035,.15,'tick')
     melody=[74,77,81,79,77,74,72,69,70,74,77,76,72,69,67,69]
     for j,m in enumerate(melody*3):
-        start=8+j*2.4
+        start=SCENE_STARTS[1]+j*3.6*beat
         if start>=seconds-7:break
         note(start,3.6,m,.075,.15)
-    for s in (3.7,11,24,40,56,64,72,80,88,96,104,112):note(s,.25,42 if s<72 else 74,.07,0,'tick')
+    for i,s in enumerate(SCENE_STARTS[1:],1):note(s,.25,42 if i<9 else 74,.085,0,'tick')
     # Sparse stereo echoes provide a room without obscuring transients.
     dry=mix.copy()
     for delay,gain in [(.19,.16),(.37,.13),(.61,.085),(.89,.045)]:
@@ -393,32 +407,37 @@ def srt_time(t):
 
 def prepare(run):
     for name in ['release','work','qa','logs']:(run/name).mkdir(parents=True,exist_ok=True)
-    data={'title':'意外的形状｜墨菲定律','duration':DURATION,'width':round(W*SCALE),'height':round(H*SCALE),'fps':FPS,'delivery_promise':{'promise_type':'reference_remake','description':'Procedural dark-gold mathematical animation with original instrumental music'},'scenes':[{'id':i,'start':8*i,'duration':8,'chapter':s[0],'title':s[1],'caption':s[2]} for i,s in enumerate(SCENES)]}
+    data={'title':'意外的形状｜墨菲定律','duration':DURATION,'width':round(W*SCALE),'height':round(H*SCALE),'fps':FPS,'delivery_promise':{'promise_type':'reference_remake','description':'Procedural dark-gold mathematical animation with original instrumental music'},'scenes':[{'id':i,'start':int(SCENE_STARTS[i]),'duration':SCENE_DURATIONS[i],'chapter':s[0],'title':s[1],'caption':s[2]} for i,s in enumerate(SCENES)]}
     (run/'storyboard.json').write_text(json.dumps(data,ensure_ascii=False,indent=2))
     (run/'qa/visible_copy.txt').write_text('\n'.join('\n'.join(s) for s in SCENES))
-    (run/'release/字幕.srt').write_text('\n\n'.join(f'{i+1}\n{srt_time(i*8+.5)} --> {srt_time((i+1)*8-.3)}\n{s[2]}' for i,s in enumerate(SCENES)),encoding='utf-8')
+    (run/'release/字幕.srt').write_text('\n\n'.join(f'{i+1}\n{srt_time(SCENE_STARTS[i]+.5*SCENE_DURATIONS[i]/8)} --> {srt_time(SCENE_STARTS[i]+SCENE_DURATIONS[i]*7.7/8)}\n{s[2]}' for i,s in enumerate(SCENES)),encoding='utf-8')
     (run/'release/发布文案.txt').write_text('《意外的形状》｜墨菲定律\n\n小概率有很多次机会，我们也可以有不止一种选择。\n\n#墨菲定律 #概率 #知识动画 #思维方式\n',encoding='utf-8')
     (run/'release/内容与来源.txt').write_text('意外的形状｜墨菲定律\n\n墨菲定律是经验格言，不是严格的概率定理。片中概率示例假定各次相互独立、出错概率固定为 1%。备用路径示例假定两路独立失效，且任何一路正常即可维持运行。\n\n历史起源存在多个版本；片中采用 NASA ASRS 介绍的一种说法。\nhttps://asrs.arc.nasa.gov/publications/callback/cb_381.html\n\n二项分布：NIST/SEMATECH e-Handbook\nhttps://itl.nist.gov/div898/handbook/eda/section3/eda366i.htm\n\n工程中的错误预防与恢复：NASA Human Performance and Error\nhttps://www.nasa.gov/reference/5-0-human-performance-and-error-vol-2/\n\n配乐：原创程序合成器乐。\n',encoding='utf-8')
     return data
 
 def main():
-    global SCALE,FPS
+    global SCALE,FPS,SCENE_DURATIONS,SCENE_STARTS,DURATION
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--output',type=Path,default=Path('output/murphy_law_20261019'))
+    parser.add_argument('--output',type=Path,default=Path('output/murphy_law'))
+    parser.add_argument('--pacing',choices=list(PACINGS),default='tight')
+    parser.add_argument('--source-video',type=Path,help='Optional original 128-second export from this renderer; retime its cached graphics')
     parser.add_argument('--preview',action='store_true')
     parser.add_argument('--sample',action='store_true')
     parser.add_argument('--scale',type=float,default=1.5)
     parser.add_argument('--fps',type=int,default=30)
     args=parser.parse_args();SCALE=args.scale;FPS=args.fps
+    SCENE_DURATIONS=PACINGS[args.pacing]
+    SCENE_STARTS=list(np.cumsum([0]+SCENE_DURATIONS[:-1]))
+    DURATION=sum(SCENE_DURATIONS)
     if SCALE<=0 or FPS<=0:parser.error('Scale and FPS must be positive')
     if round(W*SCALE)%2 or round(H*SCALE)%2:parser.error('H.264 dimensions must be even')
     run=args.output.resolve();prepare(run)
     if args.preview:
         sheet=Image.new('RGB',(1280,4*204),(9,11,14))
         for i in range(16):
-            im=frame(i*8+5.5);im.save(run/'qa'/f'scene_{i:02}.jpg',quality=93)
+            im=frame(SCENE_STARTS[i]+SCENE_DURATIONS[i]*5.5/8);im.save(run/'qa'/f'scene_{i:02}.jpg',quality=93)
             sheet.paste(im.resize((320,180),Image.Resampling.LANCZOS),((i%4)*320,(i//4)*204))
-            ImageDraw.Draw(sheet).text(((i%4)*320+8,(i//4)*204+182),f'{i*8:03d}s / {i+1:02d}',fill='white')
+            ImageDraw.Draw(sheet).text(((i%4)*320+8,(i//4)*204+182),f'{SCENE_STARTS[i]:03d}s / {i+1:02d}',fill='white')
         sheet.save(run/'qa/contact_sheet.jpg',quality=95)
         cover=background().copy();a=Canvas(cover)
         for j in range(5):orbit(a,j*7,center=(640,350),r=170+j*65,flatten=.48,color=shade(GOLD,.15+j*.035))
@@ -433,17 +452,32 @@ def main():
     dest=run/('work/sample.mp4' if args.sample else 'release/意外的形状_墨菲定律.mp4')
     cmd=['ffmpeg','-hide_banner','-loglevel','error','-y','-f','rawvideo','-vcodec','rawvideo','-pix_fmt','rgb24','-s',f'{round(W*SCALE)}x{round(H*SCALE)}','-r',str(FPS),'-i','-','-i',str(audio),'-c:v','libx264','-preset','fast','-crf','18','-pix_fmt','yuv420p','-c:a','aac','-b:a','256k','-af','loudnorm=I=-18:TP=-1.5:LRA=10','-t',str(seconds),'-movflags','+faststart',str(dest)]
     with (run/'logs/render.log').open('w') as log:
-        proc=subprocess.Popen(cmd,stdin=subprocess.PIPE,stderr=log)
-        try:
-            for k in range(round(seconds*FPS)):
-                proc.stdin.write(frame(k/FPS).tobytes())
-                if k%(FPS*8)==0:print(f'{k/FPS:.0f}/{seconds}s rendered',flush=True)
-        finally:proc.stdin.close()
-        if proc.wait()!=0:raise RuntimeError('FFmpeg failed; see logs/render.log')
+        if args.source_video:
+            source=args.source_video.resolve()
+            probe=json.loads(subprocess.check_output(['ffprobe','-v','error','-show_streams','-show_format','-of','json',str(source)]))
+            video=next(s for s in probe['streams'] if s['codec_type']=='video')
+            if abs(float(probe['format']['duration'])-128)>.05 or (video['width'],video['height'])!=(round(W*SCALE),round(H*SCALE)):
+                parser.error('--source-video must be the original 128-second export at the selected resolution')
+            if source==dest:parser.error('Source and output video must differ')
+            labels=''.join(f'[s{i}]' for i in range(len(SCENES)))
+            filters=[f'[0:v]split={len(SCENES)}{labels}']
+            for i,duration in enumerate(SCENE_DURATIONS):
+                filters.append(f'[s{i}]trim=start={i*8}:end={(i+1)*8},setpts=(PTS-STARTPTS)*{duration}/8,fps={FPS},trim=duration={duration}[v{i}]')
+            filters.append(''.join(f'[v{i}]' for i in range(len(SCENES)))+f'concat=n={len(SCENES)}:v=1:a=0[out]')
+            cached=['ffmpeg','-hide_banner','-loglevel','error','-y','-i',str(source),'-i',str(audio),'-filter_complex',';'.join(filters),'-map','[out]','-map','1:a']+cmd[cmd.index('-c:v'):]
+            subprocess.run(cached,stderr=log,check=True)
+        else:
+            proc=subprocess.Popen(cmd,stdin=subprocess.PIPE,stderr=log)
+            try:
+                for k in range(round(seconds*FPS)):
+                    proc.stdin.write(frame(k/FPS).tobytes())
+                    if k%(FPS*8)==0:print(f'{k/FPS:.0f}/{seconds}s rendered',flush=True)
+            finally:proc.stdin.close()
+            if proc.wait()!=0:raise RuntimeError('FFmpeg failed; see logs/render.log')
     if not args.sample:
         shutil.copy2(__file__,run/'release/动画源码.py')
         (run/'release/requirements.txt').write_text('numpy>=1.24\nPillow>=10.0\n')
-        (run/'release/重新渲染.txt').write_text('安装 Python 3.10+ 与 FFmpeg。\npython3 -m pip install -r requirements.txt\npython3 动画源码.py --output output/murphy_law\n\n--preview：导出分镜缩略图；--sample：导出前 16 秒。\n默认 1920×1080 / 30fps / 128 秒。\n非 macOS 系统需设置 MURPHY_SERIF_FONT 为支持中文的宋体字体文件，MURPHY_LATIN_FONT 为拉丁衬线字体文件。\n',encoding='utf-8')
+        (run/'release/重新渲染.txt').write_text('安装 Python 3.10+ 与 FFmpeg。\npython3 -m pip install -r requirements.txt\npython3 动画源码.py --output output/murphy_law\n\n--preview：导出分镜缩略图；--sample：导出前 16 秒。\n默认 1920×1080 / 30fps / 100 秒。--pacing original 使用 128 秒时间线。\n非 macOS 系统需设置 MURPHY_SERIF_FONT 为支持中文的宋体字体文件，MURPHY_LATIN_FONT 为拉丁衬线字体文件。\n',encoding='utf-8')
         with zipfile.ZipFile(run/'release/重渲染工程.zip','w',zipfile.ZIP_DEFLATED) as z:
             for name in ['动画源码.py','requirements.txt','重新渲染.txt']:z.write(run/'release'/name,name)
         artifacts=[('final_video',dest),('code_rendered_video',dest),('cover_image',run/'release/封面.jpg'),('subtitles',run/'release/字幕.srt'),('publishing_copy',run/'release/发布文案.txt'),('source_code',run/'release/动画源码.py'),('render_project',run/'release/重渲染工程.zip'),('reference_analysis',run/'work/reference_analysis.json'),('decision_log',run/'work/decision_log.json')]
