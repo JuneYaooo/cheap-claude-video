@@ -1,0 +1,13 @@
+gates:
+- final_video_required
+- procedural_route
+- fact_model_scope
+- density_pacing
+- semantic_motion_gate
+- geometry_continuity
+- safe_layout
+- single_timeline
+- audio_master
+- export_decode
+- visible_copy_clean
+- source_project_parity

@@ -1,0 +1,56 @@
+schema_version: capsule.package.v1
+profile: video.okf.capsule.v1
+name: dark_gold_knowledge_film
+display_name: 黑金知识动画
+version: 1
+status: active
+execution_mode: preset
+category: code_rendered_graphics
+primary_workflow: procedural_knowledge_film
+summary: 用宋体、黑金细线图解和原创器乐解释抽象知识；代码驱动画面，按信息密度分配镜头时长，字幕与配乐随时间线同步。
+capabilities:
+- procedural_2d_rendering
+- subtitles
+- bgm
+- sfx
+- local_compositing
+tags:
+- knowledge-explainer
+- dark-gold
+- mathematical-animation
+- code-rendered
+- variable-pacing
+- landscape
+when_to_use:
+- 用代码把抽象原理、概率、系统机制、认知模型讲成知识短片
+- 希望深色宋体、细线图表、粒子与器乐组成横屏动画
+- 已有选题，需要从事实与机制重新写脚本并设计动态图形
+when_not_to_use:
+- 必须以真人或实拍素材为证据
+- 以角色表演、照片级三维画面为主要内容
+- 只替换旧片标题而保留不相干的图表或数据
+read_order:
+  routing:
+  - index.md
+  - CARD.md
+  - contracts/input_schema.yaml
+  - contracts/content_scope.yaml
+  planning:
+  - contracts/input_schema.yaml
+  - contracts/content_scope.yaml
+  - contracts/production_contract.yaml
+  - recipes/structure.md
+  - recipes/copy.md
+  - recipes/visual.md
+  - recipes/audio.md
+  generation:
+  - contracts/runtime.yaml
+  - recipes/motion.md
+  - assets/index.yaml
+  qa:
+  - quality/rules.yaml
+  - quality/release_gates.yaml
+  learning:
+  - learning/promoted_lessons.yaml
+entrypoints:
+  preset: general_video

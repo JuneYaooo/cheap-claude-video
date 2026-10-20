@@ -1,0 +1,102 @@
+rules:
+- id: final_video_required
+  type: artifact_required
+  severity: blocker
+  category: final_video
+  rule: 成片、封面、SRT、源码工程、音频和交付检查点齐全，且实际文件存在。
+- id: procedural_route
+  type: route_gate
+  severity: blocker
+  category: route
+  rule: 最终画面由本期代码与数据绘制；通用图元可复用，固定主题渲染器不可冒充通用执行器。
+- id: fact_model_scope
+  type: copy_gate
+  severity: blocker
+  category: copy
+  rule: 当期事实可追溯，数学可复算，必要前提可见；不得把格言、示意、相关性或争议说法写成严格定理或确定因果。
+- id: density_pacing
+  type: storyboard_gate
+  severity: high
+  category: structure
+  parameters:
+    simple_scene_seconds:
+    - 4
+    - 5.5
+    explanation_scene_seconds:
+    - 5.5
+    - 7
+    dense_scene_seconds:
+    - 7
+    - 8.5
+    target_caption_characters_per_second: 5
+    minimum_readable_caption_seconds: 2
+    scene_tail_after_last_information_seconds_max: 2
+  rule: 按阅读与动作预算分配时长；参数是规划起点，超出时记录内容原因并连续审看。禁止全片等长分幕或无说明的长尾。
+- id: semantic_motion_gate
+  type: manual_review_gate
+  severity: blocker
+  category: motion
+  rule: 每幕有与解释相符的状态变化；粒子、轨道装饰和缓慢推镜不算信息增量。连续审看开场、推导、转折和结尾并记录时间区间。
+- id: geometry_continuity
+  type: manual_review_gate
+  severity: blocker
+  category: motion
+  rule: 碰撞、拼接、路径接管与图表坐标正确；终态与字幕结论一致。
+- id: safe_layout
+  type: text_overlay_gate
+  severity: blocker
+  category: visual
+  parameters:
+    design_canvas:
+    - 1280
+    - 720
+    safe_text_bounds:
+    - 40
+    - 35
+    - 1240
+    - 690
+    title_center_y: 135
+    caption_center_y: 655
+    caption_font_size: 25
+    title_font_size:
+    - 48
+    - 61
+    camera_zoom_max: 1.025
+  rule: 按实际输出比例和相机变换检查所有文字边界；检查中文、数字、公式缺字、重叠与安全区。
+- id: single_timeline
+  type: edit_plan_gate
+  severity: blocker
+  category: edit
+  rule: 视频、字幕、音轨、预览和清单的时间与总长一致；检查变长镜头的切点和尾帧。
+- id: audio_master
+  type: audio_gate
+  severity: blocker
+  category: audio
+  parameters:
+    integrated_lufs_range:
+    - -19
+    - -16
+    true_peak_max_dbfs: -1
+    silent_tail_max_seconds: 0.5
+  rule: 扫描响度、峰值、声道与尾部，实际试听配乐接缝、重音与结尾；不能只因有音轨就视为通过。
+- id: export_decode
+  type: executable_release_gate
+  severity: blocker
+  category: delivery
+  parameters:
+    blackdetect_pixel_threshold: 0.015
+    blackdetect_picture_threshold: 0.99
+    blackdetect_min_seconds: 0.1
+    freezedetect_noise_db: -65
+    freezedetect_min_seconds: 2
+  rule: 完整解码，核对编码、尺寸、帧率、帧数、音轨和时间戳。扫描黑帧、停帧与重复帧；对检测项结合计划复查，不把变化微弱直接认定为损坏，也不以背景粒子规避节奏审查。
+- id: visible_copy_clean
+  type: text_overlay_gate
+  severity: blocker
+  category: delivery
+  rule: 检查真实上屏文案，无制作交接话术、零宽字符、无依据数值或其他主题残留。
+- id: source_project_parity
+  type: artifact_required
+  severity: blocker
+  category: delivery
+  rule: 交付源码与实际渲染版本一致，包含当期计划、依赖、字体要求与重渲染命令；检查源码压缩包可解包且文件哈希匹配。

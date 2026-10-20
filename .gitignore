@@ -96,7 +96,7 @@ tests/
 # 输出目录
 output/
 
-# README Demo 对应的内置胶囊显式 allowlist；其它本地/私有胶囊不上传
+# 内置胶囊显式 allowlist；其它本地/私有胶囊不上传
 capsules/*/
 capsules/*.capsule/
 !capsules/life_sim.capsule/
@@ -119,6 +119,8 @@ capsules/*.capsule/
 !capsules/x_lai_animal_fable.capsule/**
 !capsules/plush_diorama_science.capsule/
 !capsules/plush_diorama_science.capsule/**
+!capsules/dark_gold_knowledge_film.capsule/
+!capsules/dark_gold_knowledge_film.capsule/**
 # repo_signal_grid 可公开运行，但本地测试音乐不随仓库分发；用户可传入已授权 BGM。
 capsules/repo_signal_grid.capsule/assets/*.mp3
 capsules/**/__pycache__/

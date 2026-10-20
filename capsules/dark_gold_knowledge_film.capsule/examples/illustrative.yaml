@@ -1,0 +1,14 @@
+example_only: true
+topic: <topic>
+title: <title>
+scenes:
+- purpose: hook
+  caption: <caption>
+  graphic: <episode-specific graphic>
+  duration_from: reading_and_action_budget
+- purpose: mechanism
+  caption: <caption>
+  data: <verified data>
+  assumptions:
+  - <model assumption>
+  duration_from: reading_and_action_budget

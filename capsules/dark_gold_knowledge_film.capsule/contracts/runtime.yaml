@@ -1,0 +1,85 @@
+roles: {}
+runtime_requirements:
+  python_min_version: '3.10'
+  executables_required:
+  - ffmpeg
+  - ffprobe
+  python_packages_required:
+  - Pillow
+  - numpy
+  env_required: []
+  unsupported_runtime_behavior: fail_preflight
+output_contract:
+  final_video: required
+  cover: required
+  subtitle: burned_in_and_srt
+  bgm: original_procedural_instrumental
+  voice: none_by_default
+  source_project: required
+video_elements:
+  fixed:
+    visual_generation_type: procedural_2d_render
+    production_route: agent_authored_episode_code
+    production_kit_asset: dark_gold_kit
+    single_master_timeline: true
+    episode_semantic_graphics_required: true
+  defaults:
+    resolution: 1920x1080
+    fps: 30
+    render_engine: Pillow_numpy_ffmpeg
+    language: zh-CN
+  user_overridable:
+    diagram_components:
+    - paths
+    - trees
+    - arrays
+    - curves
+    - networks
+    - custom
+    original_score_options:
+    - procedural_kit
+    - custom_original
+    - licensed_music
+  forbidden:
+  - generic_image_to_video_final
+  - topic_specific_script_as_generic_executor
+  - fixed_equal_scene_durations
+  - blind_full_film_speedup
+  - source_music_speedup
+  - silent_placeholder_audio
+  - source_creator_identity_copy
+copywriting_structure_contract:
+  topic_to_angle_required: true
+  hook_variants_required: 3
+  true_first_line_audit_required: true
+  viewer_pressure_required: false
+  counterintuitive_thesis_required: false
+  concrete_scene_required: true
+  cover_title_alignment_required: true
+  fact_check_required: true
+  required_outputs:
+  - raw_topic
+  - audience_question
+  - common_misread
+  - recommended_angle
+  - first_3_seconds
+  - first_20_seconds
+  - mechanism_chain
+  - facts_and_assumptions
+  - script_outline
+  - caption_event_table
+  - cover_text
+  - title
+  - risk_notes
+  opening_gate:
+    max_seconds: 3
+    must_contain_one_of:
+    - observable anomaly
+    - a familiar action failing
+    - a concrete choice with a visible consequence
+    - a visual completion gap
+    reject_if_only:
+    - a title with ambient particles
+    - an abstract definition
+    - background chronology
+    - a generic rhetorical question

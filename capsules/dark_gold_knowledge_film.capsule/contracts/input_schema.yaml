@@ -1,0 +1,50 @@
+fields:
+  topic:
+    type: string
+    required: true
+    description: 当期主题或待解释的问题。
+  audience:
+    type: string
+    required: false
+    default: 愿意通过图解理解一个原理的普通观众
+  target_duration:
+    type: number
+    required: false
+    default: 100
+    minimum: 45
+    maximum: 180
+    description: 目标秒数；最终长度由内容、阅读与动作时长决定，不靠均分。
+  aspect_ratio:
+    type: string
+    required: false
+    default: '16:9'
+    enum:
+    - '16:9'
+    description: 其他画幅需重新设计安全区与布局。
+  reference_material:
+    type: array
+    required: false
+    description: 当期参考材料及可核对的原始来源。
+  facts_and_assumptions:
+    type: array
+    required: false
+    description: 计划阶段补齐事实、数学前提、模型适用范围和不确定性。
+  episode_plan:
+    type: object
+    required: false
+    description: 计划产物：title、cover、facts、claims、scene durations、captions、events、graphic inputs、audio cues、sources。
+  font_files:
+    type: object
+    required: false
+    description: 本机可用的中文宋体与拉丁衬线字体文件；交付工具不附带商业字体。
+  music_bpm:
+    type: number
+    required: false
+    default: 104
+    minimum: 80
+    maximum: 120
+  narration:
+    type: boolean
+    required: false
+    default: false
+    description: 默认器乐加字幕；开启口播时单独规划合规 TTS 渠道和语音主时间线。

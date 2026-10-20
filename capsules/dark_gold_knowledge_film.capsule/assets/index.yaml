@@ -1,0 +1,8 @@
+assets:
+- path: kit/gold_kit.py
+  role: template
+  description: 通用画布、宋体排字、曲线、节点、轨道、整数帧时间线与原创器乐合成；由当期脚本调用。
+  required: true
+  key: dark_gold_kit
+  reuse: always
+  sha256: 64cb188a54a61c84caedf51a171b75d485d8c74740f8bf686078fcd3fd12618b
