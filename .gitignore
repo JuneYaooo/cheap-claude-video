@@ -121,6 +121,14 @@ capsules/*.capsule/
 !capsules/plush_diorama_science.capsule/**
 !capsules/dark_gold_knowledge_film.capsule/
 !capsules/dark_gold_knowledge_film.capsule/**
+!capsules/vibe_probability_lab.capsule/
+!capsules/vibe_probability_lab.capsule/**
+!capsules/vibe_decision_poem.capsule/
+!capsules/vibe_decision_poem.capsule/**
+!capsules/vibe_system_blueprint.capsule/
+!capsules/vibe_system_blueprint.capsule/**
+!capsules/vibe_learning_workbench.capsule/
+!capsules/vibe_learning_workbench.capsule/**
 # repo_signal_grid 可公开运行，但本地测试音乐不随仓库分发；用户可传入已授权 BGM。
 capsules/repo_signal_grid.capsule/assets/*.mp3
 capsules/**/__pycache__/

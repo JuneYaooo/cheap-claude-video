@@ -1,0 +1,238 @@
+{
+  "title": "剩两扇门，为什么还不是一半？",
+  "description": "三门问题：主持人知道答案、总打开未选中的空门，并总给换门机会。先猜，再穷举。",
+  "seed": 73,
+  "reference_analysis": {
+    "reference_url": "https://www.douyin.com/video/7691663869630121657",
+    "observed": [
+      "深色字幕科普；先让观众换门或不换门，再扩展门阵解释概率；包含历史信件叙事。",
+      "本模板抽取互动选择与穷举，舍去历史情节，改用实验台视觉。"
+    ],
+    "adaptation": "保留叙事机制，重写文案、配色、布局、图形与配乐。"
+  },
+  "sources": [
+    "https://www.stat.berkeley.edu/~stark/SticiGui/Text/montyHall.htm"
+  ],
+  "scenes": [
+    {
+      "kind": "doors",
+      "duration": 7,
+      "heading": "剩下两扇门，你换不换？",
+      "eyebrow": "MONTY HALL / 先给自己一个答案",
+      "data": {
+        "selected": 0,
+        "opened": [
+          2
+        ],
+        "reveal_at": 1.5,
+        "labels": [
+          "已选",
+          "可换",
+          "已打开"
+        ],
+        "revealed_label": "空"
+      },
+      "captions": [
+        {
+          "start": 0.0,
+          "end": 3.5,
+          "text": "你选了 1 号门，主持人打开一扇空门。"
+        },
+        {
+          "start": 3.5,
+          "end": 7.0,
+          "text": "剩下两扇门，机会真的是各一半吗？"
+        }
+      ]
+    },
+    {
+      "kind": "doors",
+      "duration": 9,
+      "heading": "关键藏在主持人的规则里",
+      "eyebrow": "01 / 条件决定概率",
+      "data": {
+        "selected": 0,
+        "opened": [
+          2
+        ],
+        "reveal_at": 0,
+        "labels": [
+          "先选定",
+          "不移动奖品",
+          "只开空门"
+        ],
+        "revealed_label": "空"
+      },
+      "captions": [
+        {
+          "start": 0.0,
+          "end": 3.0,
+          "text": "奖品等概率放在三扇门后。"
+        },
+        {
+          "start": 3.0,
+          "end": 6.0,
+          "text": "主持人知道答案，总开未选中的空门。"
+        },
+        {
+          "start": 6.0,
+          "end": 9.0,
+          "text": "而且，他每次都给你换门的机会。"
+        }
+      ]
+    },
+    {
+      "kind": "matrix",
+      "duration": 9,
+      "heading": "第一次选中，只有三分之一",
+      "eyebrow": "02 / 把情况拆开",
+      "data": {
+        "values": [
+          1,
+          2
+        ],
+        "labels": [
+          "最初选中奖品",
+          "最初选中空门"
+        ],
+        "display": [
+          "1 / 3",
+          "2 / 3"
+        ],
+        "dots": 120,
+        "note": "点阵表示理论比例"
+      },
+      "captions": [
+        {
+          "start": 0.0,
+          "end": 4.5,
+          "text": "你最初只有两种处境：选中，或者没选中。"
+        },
+        {
+          "start": 4.5,
+          "end": 9.0,
+          "text": "没选中的机会，是选中的两倍。"
+        }
+      ]
+    },
+    {
+      "kind": "doors",
+      "duration": 8,
+      "heading": "原来选错，换门就赢",
+      "eyebrow": "03 / 沿着规则走一遍",
+      "data": {
+        "selected": 0,
+        "opened": [
+          2
+        ],
+        "reveal_at": 0,
+        "labels": [
+          "空门",
+          "奖品",
+          "空门"
+        ],
+        "revealed_label": "空",
+        "switch": true,
+        "switch_label": "主持人替你排除另一扇空门"
+      },
+      "captions": [
+        {
+          "start": 0.0,
+          "end": 4.0,
+          "text": "若最初选错，主持人只能打开另一扇空门。"
+        },
+        {
+          "start": 4.0,
+          "end": 8.0,
+          "text": "剩下那扇没有打开的门，就藏着奖品。"
+        }
+      ]
+    },
+    {
+      "kind": "matrix",
+      "duration": 10,
+      "heading": "把三种位置全部列出来",
+      "eyebrow": "04 / 概率来自穷举",
+      "data": {
+        "values": [
+          1,
+          2
+        ],
+        "labels": [
+          "坚持原门：赢 1 种",
+          "换到另一门：赢 2 种"
+        ],
+        "display": [
+          "1 / 3",
+          "2 / 3"
+        ],
+        "dots": 120,
+        "note": "三种奖品位置等可能；这里是穷举，不是抽样",
+        "columns": [
+          "奖品位置",
+          "坚持原门",
+          "换另一门"
+        ],
+        "cases": [
+          [
+            "你原来选的门",
+            "赢",
+            "输"
+          ],
+          [
+            "另外的第 1 扇",
+            "输",
+            "赢"
+          ],
+          [
+            "另外的第 2 扇",
+            "输",
+            "赢"
+          ]
+        ]
+      },
+      "captions": [
+        {
+          "start": 0.0,
+          "end": 3.333,
+          "text": "奖品在原门后：坚持赢，换门输。"
+        },
+        {
+          "start": 3.333,
+          "end": 6.667,
+          "text": "奖品在另外任一门后：坚持输，换门赢。"
+        },
+        {
+          "start": 6.667,
+          "end": 10.0,
+          "text": "所以总换门，获胜概率是三分之二。"
+        }
+      ]
+    },
+    {
+      "kind": "statement",
+      "duration": 8,
+      "heading": "答案依赖规则",
+      "eyebrow": "05 / 重新检查直觉",
+      "data": {
+        "lines": [
+          "不是少了一扇门",
+          "而是多了一条信息"
+        ],
+        "note": "如果主持人随意开门，必须重新计算。"
+      },
+      "captions": [
+        {
+          "start": 0.0,
+          "end": 4.0,
+          "text": "“剩下两个”不等于“机会均等”。"
+        },
+        {
+          "start": 4.0,
+          "end": 8.0,
+          "text": "开门的人知道什么，才是这道题的关键。"
+        }
+      ]
+    }
+  ]
+}

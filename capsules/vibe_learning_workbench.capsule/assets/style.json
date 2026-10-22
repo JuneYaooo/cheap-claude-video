@@ -1,0 +1,11 @@
+{
+  "label": "04 / LEARNING WORKBENCH",
+  "background": "#f0ebde",
+  "ink": "#263b34",
+  "accent": "#326a51",
+  "secondary": "#b96a41",
+  "muted": "#788079",
+  "grid": "#d7d8ca",
+  "bpm": 96,
+  "particles": false
+}

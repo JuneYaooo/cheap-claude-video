@@ -1,0 +1,5 @@
+assets:
+- id: visual_style
+  path: style.json
+  type: json
+  description: 不含当期事实的色彩、字体策略与音乐节奏

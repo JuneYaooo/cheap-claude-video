@@ -1,0 +1,46 @@
+schema_version: capsule.package.v1
+profile: video.okf.capsule.v1
+name: vibe_decision_poem
+display_name: 人生算法诗
+version: 1
+status: draft
+execution_mode: preset
+category: code_rendered_graphics
+primary_workflow: procedural_knowledge_film
+summary: 用连续几何动画和克制的情绪收束，解释选择模型及其现实边界。
+capabilities:
+- procedural_2d_rendering
+- subtitles
+- bgm
+- local_compositing
+tags:
+- vibe-knowledge
+when_to_use:
+- 可视化决策模型与情绪收束的知识短片
+when_not_to_use:
+- 把数学近似当作现实人生指令
+read_order:
+  routing:
+  - index.md
+  - CARD.md
+  - contracts/input_schema.yaml
+  - contracts/content_scope.yaml
+  planning:
+  - contracts/input_schema.yaml
+  - contracts/content_scope.yaml
+  - contracts/production_contract.yaml
+  - recipes/structure.md
+  - recipes/copy.md
+  - recipes/visual.md
+  - recipes/audio.md
+  generation:
+  - contracts/runtime.yaml
+  - recipes/motion.md
+  - assets/index.yaml
+  qa:
+  - quality/rules.yaml
+  - quality/release_gates.yaml
+  learning:
+  - learning/promoted_lessons.yaml
+entrypoints:
+  preset: general_video

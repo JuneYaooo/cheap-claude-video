@@ -314,6 +314,8 @@ https://github.com/JuneYaooo/cheap-claude-video
 | `dual_role_real_screen_recording` | 双角色项目科普，加入 GitHub 与 WorkBuddy 操作证据 | GitHub 真实滚动录屏、WorkBuddy 原生 OBS 窗口录屏、来源哈希与隐私验收 |
 | `mv_scene_cut` | 歌曲 MV：一位角色贯穿全片，靠画面切换撑起节奏 | 参考片剪辑语法实测、逐帧锁定时间轴、口型与情景交替、景别两刀一换、亮度按素材归一、逐字字幕与全片转写验收 |
 
+新增四套 [Vibe 知识图解模板](docs/vibe-knowledge-templates.md)：概率实验室、人生算法诗、系统蓝图、学习工作台。随附四个独立主题的场景 JSON，可用本地渲染器导出带字幕和原创配乐的 1080p 横屏视频。
+
 ## 质量门与局部返工
 
 Capsule Cinema 把「能播放」和「能交付」分开处理。完成媒体生成后，系统会建立编辑计划并检查本地文件、时间线和发布要求。检查项可以包括：

@@ -1,0 +1,46 @@
+schema_version: capsule.package.v1
+profile: video.okf.capsule.v1
+name: vibe_probability_lab
+display_name: 概率实验室
+version: 1
+status: draft
+execution_mode: preset
+category: code_rendered_graphics
+primary_workflow: procedural_knowledge_film
+summary: 用选择、揭晓、穷举和模拟，将反直觉概率变成可参与的实验。
+capabilities:
+- procedural_2d_rendering
+- subtitles
+- bgm
+- local_compositing
+tags:
+- vibe-knowledge
+when_to_use:
+- 反直觉概率、选择实验与穷举图解
+when_not_to_use:
+- 缺少概率模型或必要条件的结论
+read_order:
+  routing:
+  - index.md
+  - CARD.md
+  - contracts/input_schema.yaml
+  - contracts/content_scope.yaml
+  planning:
+  - contracts/input_schema.yaml
+  - contracts/content_scope.yaml
+  - contracts/production_contract.yaml
+  - recipes/structure.md
+  - recipes/copy.md
+  - recipes/visual.md
+  - recipes/audio.md
+  generation:
+  - contracts/runtime.yaml
+  - recipes/motion.md
+  - assets/index.yaml
+  qa:
+  - quality/rules.yaml
+  - quality/release_gates.yaml
+  learning:
+  - learning/promoted_lessons.yaml
+entrypoints:
+  preset: general_video

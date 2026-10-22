@@ -1,0 +1,11 @@
+{
+  "label": "03 / SYSTEM BLUEPRINT",
+  "background": "#09182d",
+  "ink": "#edf3fc",
+  "accent": "#74c8f0",
+  "secondary": "#ff997a",
+  "muted": "#849bb9",
+  "grid": "#1c3553",
+  "bpm": 112,
+  "particles": false
+}

@@ -1,0 +1,16 @@
+fields:
+  topic:
+    type: string
+    required: true
+  episode_plan:
+    type: object
+    required: true
+    description: 含 title、sources、scenes；每幕 kind、heading、duration、data、captions。
+  font_files:
+    type: object
+    required: true
+  aspect_ratio:
+    type: string
+    default: '16:9'
+    enum:
+    - '16:9'

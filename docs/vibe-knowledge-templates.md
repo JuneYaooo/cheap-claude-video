@@ -1,0 +1,70 @@
+# Vibe 知识视频模板
+
+四套本地程序绘图预设，把知识解释转成可参与的图解。每套配方保留叙事顺序、视觉和动效规则；当期内容由独立 JSON 提供。
+
+| 预设 | 表达结构 | 随附示例 |
+| --- | --- | --- |
+| `vibe_probability_lab` 概率实验室 | 选择 → 揭晓 → 比例 / 穷举 → 规则边界 | 三门问题 |
+| `vibe_decision_poem` 人生算法诗 | 情境 → 候选序列 → 曲线 → 情绪收束 | 最优停止 |
+| `vibe_system_blueprint` 系统蓝图 | 网络 → 单变量改变 → 流量与计算 → 整体结果 | 布雷斯悖论 |
+| `vibe_learning_workbench` 学习工作台 | 现场练习 → 遮挡回忆 → 反馈 → 可重复行动 | 主动回忆 |
+
+这些是 `preset`：各有一条完整样片验证，尚未完成跨多个主题的稳定性验证。默认输出 1920×1080、30fps、烧录字幕、SRT 和原创程序器乐，无旁白。当前只支持 16:9。
+
+## 安装与运行
+
+需要完整 Capsule Cinema 仓库、Python 3.12、Pillow、numpy、PyYAML、FFmpeg / FFprobe，以及有使用权限且包含所需字符的中文、拉丁字体。渲染器复用仓库内 `dark_gold_knowledge_film` 的基础绘图库；独立胶囊 ZIP 不包含整个运行时。
+
+```bash
+python3.12 -m pip install Pillow numpy PyYAML
+python3.12 scripts/render_vibe_template.py \
+  --capsule vibe_probability_lab \
+  --input examples/vibe_knowledge/vibe_probability_lab.json \
+  --out output/probability-preview \
+  --font /absolute/path/to/chinese-font.ttf \
+  --latin-font /absolute/path/to/latin-font.ttf \
+  --preview
+```
+
+审阅 `qa/review_contact_sheet.jpg` 后，去掉 `--preview`，使用一个新的输出目录渲染成片。可用 `--width 1280 --fps 24` 导出低分辨率版本。已有 `release/final.mp4` 时会拒绝覆盖。
+
+渲染后执行基础验证：
+
+```bash
+python3.12 scripts/validate_edit_plan.py --workspace output/probability-film
+python3.12 scripts/local_video_qa.py \
+  --run-dir output/probability-film \
+  --aspect-ratio 16:9 --min-duration 45 --expect-audio \
+  --output output/probability-film/qa/local_video_qa.json
+```
+
+以上目录应替换为实际成片目录。基础检查覆盖媒体元数据、音轨、时长和时间线；发布前还需检查全部文字、图形含义、动画过程与音频听感。自动技术检查不代表完整内容审片。
+
+## 替换选题
+
+从 `examples/vibe_knowledge/` 复制对应 JSON，修改 `title`、`description`、`sources` 和 `scenes`。每幕包含 `kind`、`heading`、`duration`、`data` 和带起止时间的 `captions`。数据来源需对应当期事实。`reference_analysis` 用来记录参考片及实际改编方式，不复制作者身份或音画素材。
+
+- 每幕 3–30 秒；字幕每段不超过 46 个字符，不可重叠或越出本幕时间。
+- `doors`：三门场景，支持指定选中门、开启门、门下说明与切换指示。
+- `matrix`：按比例显示点阵；也可用 `cases` 和 `columns` 展示穷举表。理论比例和实际模拟须明确区分。
+- `bars`：`values`、`labels`、可选 `display` 和 `highlight`。
+- `sequence`：归一化 `values`、观察截止 `cutoff`、比较值 `threshold`；`stop_on_record` 在观察期后第一个超出比较值的候选处停止。
+- `curve`：`points` 与 `marker` 使用 `[0,1]` 画布坐标。启用 `percent_axes` 后，纵轴标签按 `y_max` 换算；调用者需把真实值除以纵轴最大值后传入。示例概率曲线用 0.5 为纵轴上限。
+- `network`：`nodes` 的 `xy` 使用 1280×720 设计坐标；`edges` 指向节点索引，配置流向、速度、标签和揭晓时间。粒子运动是示意，不是交通仿真。
+- `recall`：最多六个 `items`；`hide_at` / `reveal_at` 控制遮挡与恢复。
+- `loop`：3–6 个 `items`，按顺序强调当前步骤。
+- `statement`：1–3 行结论与一行条件说明。
+
+画面使用 1280×720 逻辑画布，成片按比例放大。标题和图表标签自动缩小到限定宽度；仍应先预览，避免长文造成字体过小。字体文件不随配方分发。
+
+## 输出与打包
+
+`release/` 包含 MP4、封面、SRT 和发布文案；`work/` 保留当期输入、样式、原创配乐、连续画面母版、编辑计划和时间线；`qa/` 包含代表帧。编辑计划引用真实连续画面母版，并以 `scene_map` 标注每幕，不伪造独立镜头文件。
+
+```bash
+python3.12 scripts/capsule_package_validate.py capsules/vibe_probability_lab.capsule
+python3.12 scripts/capsule_package_pack.py capsules/vibe_probability_lab.capsule \
+  --out output/vibe_probability_lab.capsule.zip
+```
+
+新主题的脚本和数据留在独立输入中；只有通用方法才回写配方。示例中的知识来源随 JSON 提供，扩写时应重新核验适用条件。

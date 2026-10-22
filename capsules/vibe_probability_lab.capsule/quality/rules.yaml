@@ -1,0 +1,16 @@
+rules:
+- id: final_video_required
+  type: artifact_required
+  severity: blocker
+  category: final_video
+  rule: Final video must be produced before release.
+- id: copywriting_structure_contract_required
+  type: copy_gate
+  severity: blocker
+  category: copy
+  rule: 'Planning must produce the capsule copywriting structure contract before generation: topic angle, first 3 seconds, first 20 seconds, script outline, cover text, title, and risk notes.'
+- id: first_three_seconds_hook_required
+  type: copy_gate
+  severity: blocker
+  category: copy
+  rule: The real first 0-3 seconds must contain concrete pain, identity pressure, a counterintuitive verdict, a status/control stake, or a completion gap.

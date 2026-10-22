@@ -1,0 +1,77 @@
+roles: {}
+output_contract:
+  final_video: required
+  cover: required
+  subtitle: burned_in_and_srt
+  bgm: original_procedural_instrumental
+  source_project: required
+  has_narration: false
+  add_background_music: true
+  add_subtitles: true
+video_elements:
+  fixed:
+    production_route: agent_authored_scene_json
+    visual_generation_type: procedural_2d_render
+  defaults:
+    resolution: 1920x1080
+    fps: 30
+    narration: false
+  user_overridable:
+    diagram_components:
+    - doors
+    - matrix
+    - bars
+    - sequence
+    - curve
+    - network
+    - recall
+    - loop
+    - statement
+  forbidden:
+  - fixed_topic_defaults
+  - unlabelled_simulation
+  - silent_placeholder_audio
+copywriting_structure_contract:
+  topic_to_angle_required: true
+  hook_variants_required: 3
+  true_first_line_audit_required: true
+  viewer_pressure_required: false
+  counterintuitive_thesis_required: false
+  concrete_scene_required: true
+  cover_title_alignment_required: true
+  required_outputs:
+  - raw_topic
+  - audience_pressure
+  - common_misread
+  - counterintuitive_thesis
+  - viral_angle_candidates
+  - recommended_angle
+  - first_3_seconds
+  - first_20_seconds
+  - script_outline
+  - cover_text
+  - title
+  - risk_notes
+  opening_gate:
+    max_seconds: 3
+    must_contain_one_of:
+    - concrete pain
+    - identity pressure
+    - counterintuitive verdict
+    - status or control stake
+    - completion gap
+    reject_if_only:
+    - background setup
+    - abstract concept explanation
+    - generic advice
+    - soft greeting
+    - metadata-only hook
+runtime_requirements:
+  executables_required:
+  - ffmpeg
+  - ffprobe
+  python_packages_required:
+  - Pillow
+  - numpy
+  - PyYAML
+  env_required: []
