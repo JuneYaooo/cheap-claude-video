@@ -12,3 +12,5 @@ tags:
 可见反常结果 → 节点与规则 → 基线流量 → 改变一项条件 → 新均衡 → 系统层面的解释。
 
 当期的主题、数字、图表数据、字幕与来源放在输入 JSON；模板只保留结构与样式。
+
+可选 system_city 组件分为 hook、rules、baseline、shortcut、equilibrium、compare 六个阶段；模型数据集中输入，所有显示耗时由同一组参数计算。

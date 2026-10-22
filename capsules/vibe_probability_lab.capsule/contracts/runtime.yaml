@@ -27,6 +27,12 @@ video_elements:
     - recall
     - loop
     - statement
+    - probability_choice
+    - probability_rules
+    - probability_trials
+    - probability_odds
+    - probability_boundary
+    - probability_result
   forbidden:
   - fixed_topic_defaults
   - unlabelled_simulation

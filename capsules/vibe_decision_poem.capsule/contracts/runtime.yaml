@@ -27,6 +27,12 @@ video_elements:
     - recall
     - loop
     - statement
+    - decision_opening
+    - decision_conditions
+    - decision_track
+    - decision_curve
+    - decision_odds
+    - decision_epilogue
   forbidden:
   - fixed_topic_defaults
   - unlabelled_simulation

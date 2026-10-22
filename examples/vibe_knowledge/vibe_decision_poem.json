@@ -1,6 +1,6 @@
 {
-  "title": "什么时候，该停止寻找？",
-  "description": "从最优停止问题，看见探索与决定的边界。37% 是特定数学模型的大样本近似，不是人生时间表。",
+  "title": "继续找，会不会错过眼前？",
+  "description": "观察、拒绝、决定：最优停止模型解释了探索的代价，也解释了为什么最优仍可能留下遗憾。模型的大样本结论不是人生时间表。",
   "seed": 73,
   "reference_analysis": {
     "reference_url": "https://www.douyin.com/video/7691722835458313514",
@@ -8,15 +8,16 @@
       "黑金衬线字、候选序列、最优曲线，结尾落到遗憾与勇气。",
       "本模板用暗酒红和香槟金重排，强化前提与模型边界，保留情绪收束。"
     ],
-    "adaptation": "保留叙事机制，重写文案、配色、布局、图形与配乐。"
+    "adaptation": "保留黑金衬线、候选逐次经过、曲线推演与情绪收束。重写文字与镜头布局，候选在停止点后不再揭示未来；手绘图元、本地原创程序配乐，无原片音画搬用。",
+    "review_scope": "依据已实际观察的抖音页面代表画面；没有声称取得完整源片或逐帧比对。"
   },
   "sources": [
     "https://www.math.ucla.edu/~tom/Stopping/Contents.html"
   ],
   "scenes": [
     {
-      "kind": "sequence",
-      "duration": 7,
+      "kind": "decision_opening",
+      "duration": 8,
       "heading": "继续找，会不会错过眼前？",
       "eyebrow": "OPTIMAL STOPPING / 一个关于选择的模型",
       "data": {
@@ -36,54 +37,57 @@
         "threshold": 0.63,
         "left_label": "还想再看看",
         "right_label": "也怕错过",
-        "threshold_label": "当前最好"
+        "threshold_label": "当前最好",
+        "lines": [
+          "还想再看看。",
+          "也怕，就这样错过。"
+        ],
+        "present_label": "你只能站在此刻",
+        "kicker": "THE ART OF CHOOSING"
       },
       "captions": [
         {
-          "start": 0.0,
-          "end": 3.5,
-          "text": "每个选择都在眼前经过。"
+          "start": 0,
+          "end": 3.2,
+          "text": "一个选择经过。你还想等下一个。"
         },
         {
-          "start": 3.5,
-          "end": 7.0,
-          "text": "你不知道最好的，还在后面，还是已经走远。"
+          "start": 3.2,
+          "end": 8,
+          "text": "可最好的，到底还在前面，还是已经走远？"
         }
       ]
     },
     {
-      "kind": "statement",
-      "duration": 10,
+      "kind": "decision_conditions",
+      "duration": 9,
       "heading": "先约定一个理想世界",
       "eyebrow": "01 / 这不是现实的完整地图",
       "data": {
-        "lines": [
-          "总数已知 · 顺序随机",
-          "当场决定 · 不能回头"
+        "items": [
+          "总数已知，顺序随机",
+          "可比较高低，只知过去",
+          "当场决定，拒绝不回头",
+          "只选一次，目标是全体最佳"
         ],
-        "note": "目标只有一个：选中全体中的最佳。"
+        "note": "先把现实简化，才能讨论一个数学答案。"
       },
       "captions": [
         {
-          "start": 0.0,
-          "end": 3.333,
-          "text": "所有候选可排序，逐个随机出现。"
+          "start": 0,
+          "end": 4.5,
+          "text": "先假设：候选逐个随机出现，数量事先知道。"
         },
         {
-          "start": 3.333,
-          "end": 6.667,
-          "text": "一旦拒绝，不能回头；只允许选一次。"
-        },
-        {
-          "start": 6.667,
-          "end": 10.0,
-          "text": "现实通常不完全满足这些前提。"
+          "start": 4.5,
+          "end": 9,
+          "text": "只能选一次，拒绝后不能回头，目标是全体最佳。"
         }
       ]
     },
     {
-      "kind": "sequence",
-      "duration": 10,
+      "kind": "decision_track",
+      "duration": 11,
       "heading": "先建立标准，再做决定",
       "eyebrow": "02 / 让过去成为比较标准",
       "data": {
@@ -101,32 +105,34 @@
         ],
         "cutoff": 4,
         "threshold": 0.63,
-        "left_label": "前段：只观察",
-        "right_label": "后段：首次超过就选",
-        "threshold_label": "观察期最高值",
-        "stop_on_record": true
+        "left_label": "先观察，建立标准",
+        "right_label": "首次超过标准，就选择",
+        "threshold_label": "已见最高值",
+        "stop_on_record": true,
+        "step_seconds": 0.9,
+        "chosen_label": "停在这里"
       },
       "captions": [
         {
-          "start": 0.0,
-          "end": 3.333,
-          "text": "策略是先观察一部分，只记住最好值。"
+          "start": 0,
+          "end": 3.5,
+          "text": "先观察一段，只记住其中最好的。"
         },
         {
-          "start": 3.333,
-          "end": 6.667,
-          "text": "之后遇到第一个超过它的，就做决定。"
+          "start": 3.5,
+          "end": 7.2,
+          "text": "之后遇到第一个超过标准的，就停下。"
         },
         {
-          "start": 6.667,
-          "end": 10.0,
-          "text": "这组小序列只演示规则，不代表最优比例。"
+          "start": 7.2,
+          "end": 11,
+          "text": "这组小序列演示规则，不代表最优观察比例。"
         }
       ]
     },
     {
-      "kind": "curve",
-      "duration": 11,
+      "kind": "decision_curve",
+      "duration": 12,
       "heading": "为什么总有人说 37%？",
       "eyebrow": "03 / 曲线由公式逐点计算",
       "data": {
@@ -536,33 +542,35 @@
           0.36787944117144233,
           0.7357588823428847
         ],
-        "marker_label": "1 / e ≈ 36.8%",
-        "x_label": "观察期占全部候选的比例 →",
+        "marker_label": "36.8%",
+        "x_label": "观察期占全部候选的比例",
         "y_label": "选中全体最佳的概率",
         "note": "大样本近似：P(r) = −r ln(r)；纵轴上限 50%",
         "percent_axes": true,
-        "y_max": 0.5
+        "y_max": 0.5,
+        "marker_note": "大样本最优观察比例",
+        "formula": "P(r) = −r ln(r)"
       },
       "captions": [
         {
-          "start": 0.0,
-          "end": 3.667,
-          "text": "观察太少，标准不足；观察太久，最好的人可能已离开。"
+          "start": 0,
+          "end": 4,
+          "text": "观察太少，标准不足；观察太久，又容易错过。"
         },
         {
-          "start": 3.667,
-          "end": 7.333,
-          "text": "在这个模型里，大样本最优观察比例趋近 1/e。"
+          "start": 4,
+          "end": 8,
+          "text": "在这个模型里，最优观察比例趋近 1/e。"
         },
         {
-          "start": 7.333,
-          "end": 11.0,
-          "text": "大约 36.8%，常被四舍五入成 37%。"
+          "start": 8,
+          "end": 12,
+          "text": "也就是约 36.8%，常被简称为 37% 法则。"
         }
       ]
     },
     {
-      "kind": "bars",
+      "kind": "decision_odds",
       "duration": 8,
       "heading": "最优，也不保证如愿",
       "eyebrow": "04 / 理解一个方法的上限",
@@ -572,15 +580,15 @@
           0.6321205588285577
         ],
         "labels": [
-          "选中最佳",
-          "没有选中最佳"
+          "选中全体最佳",
+          "没有选中全体最佳"
         ],
         "display": [
           "≈ 37%",
           "≈ 63%"
         ],
         "highlight": 0,
-        "note": "同一模型的大样本极限；不是任意选择的成功率"
+        "note": "同一模型的大样本极限；最优不等于必然成功"
       },
       "captions": [
         {
@@ -596,16 +604,16 @@
       ]
     },
     {
-      "kind": "statement",
+      "kind": "decision_epilogue",
       "duration": 9,
       "heading": "生活比模型，多一些余地",
       "eyebrow": "05 / 把选择还给自己",
       "data": {
         "lines": [
-          "可以重新了解",
-          "也可以重新选择"
+          "有些规则，帮我们取舍。",
+          "有些余地，留给自己。"
         ],
-        "note": "把规则当作思考工具，不把年龄当作倒计时。"
+        "note": "模型不是人生的倒计时。"
       },
       "captions": [
         {
@@ -620,5 +628,23 @@
         }
       ]
     }
-  ]
+  ],
+  "hook_candidates": [
+    {
+      "text": "继续找，会不会错过眼前？",
+      "selected": true,
+      "reason": "首屏直接落在继续探索与立即决定的矛盾，图形同时让候选经过。"
+    },
+    {
+      "text": "最优的方法，也可能让你失望。",
+      "selected": false,
+      "reason": "结论提前，适合后段反转，但开头缺少具体选择处境。"
+    },
+    {
+      "text": "为什么总有人劝你等到 37%？",
+      "selected": false,
+      "reason": "概念先行且容易被误解为关系或年龄公式。"
+    }
+  ],
+  "first_20_seconds": "0–8秒候选经过、提出眼前与未来的冲突；8–17秒给出模型四类约束；17–20秒开始观察阶段，建立标准。"
 }

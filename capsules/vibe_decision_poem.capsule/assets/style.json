@@ -1,11 +1,11 @@
 {
   "label": "02 / THE ART OF CHOOSING",
-  "background": "#171218",
+  "background": "#151016",
   "ink": "#f2e6d8",
-  "accent": "#e8bf79",
+  "accent": "#dfb674",
   "secondary": "#ba858e",
-  "muted": "#a89a9c",
-  "grid": "#362731",
-  "bpm": 84,
-  "particles": true
+  "muted": "#a69594",
+  "grid": "#302029",
+  "bpm": 78,
+  "particles": false
 }

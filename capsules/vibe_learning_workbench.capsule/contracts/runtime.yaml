@@ -18,12 +18,12 @@ video_elements:
     narration: false
   user_overridable:
     diagram_components:
-    - doors
-    - matrix
-    - bars
-    - sequence
-    - curve
-    - network
+    - learning_desk
+    - learning_recall
+    - learning_practice
+    - learning_questions
+    - learning_evidence
+    - learning_action
     - recall
     - loop
     - statement

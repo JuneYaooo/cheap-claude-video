@@ -27,6 +27,7 @@ video_elements:
     - recall
     - loop
     - statement
+    - system_city
   forbidden:
   - fixed_topic_defaults
   - unlabelled_simulation

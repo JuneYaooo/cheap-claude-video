@@ -52,3 +52,5 @@ tags:
 ## 本地制作
 
 由 Agent 按配方编写当期场景 JSON，再调用项目的 `scripts/render_vibe_template.py`。渲染器与基础绘图库随 Capsule Cinema 运行时安装，独立配方包需要该运行时。先使用 `--preview` 审阅图解，再导出 MP4、字幕、封面与时间线。
+
+场景模块 `scripts/vibe_scenes/learning.py` 提供人物书桌、合书回忆、三步示范、问题笔记、延迟测试日历和行动清单。每种组件的数据字段由运行时校验；可复用结构与当期科学结论分开维护。

@@ -30,6 +30,24 @@ spec.loader.exec_module(k)
 CAPSULES = ('vibe_probability_lab', 'vibe_decision_poem',
             'vibe_system_blueprint', 'vibe_learning_workbench')
 KINDS = {'doors', 'matrix', 'bars', 'sequence', 'curve', 'network', 'recall', 'loop', 'statement'}
+EXTRA_DRAWERS = {}
+SCENE_VALIDATORS = {}
+# Fixed, local component modules; never execute a module path from episode input.
+for component_name in ('probability', 'decision', 'system', 'learning'):
+    component_path = ROOT / 'scripts' / 'vibe_scenes' / (component_name + '.py')
+    if not component_path.exists():
+        continue
+    component_spec = importlib.util.spec_from_file_location('vibe_component_' + component_name, component_path)
+    component = importlib.util.module_from_spec(component_spec)
+    sys.modules[component_spec.name] = component
+    component_spec.loader.exec_module(component)
+    for kind, drawer in component.DRAWERS.items():
+        if kind in KINDS or not callable(drawer):
+            raise ValueError(f'duplicate or invalid scene component: {kind}')
+        KINDS.add(kind)
+        EXTRA_DRAWERS[kind] = drawer
+        if hasattr(component, 'validate_scene'):
+            SCENE_VALIDATORS[kind] = component.validate_scene
 
 
 def dump(path, value):
@@ -60,6 +78,8 @@ def validate(episode, style):
         data = s.get('data', {})
         if not isinstance(data, dict):
             raise ValueError(f'scene {i}: data must be an object')
+        if s['kind'] in SCENE_VALIDATORS:
+            SCENE_VALIDATORS[s['kind']](s)
         if s['kind'] == 'curve':
             pts = data.get('points', [])
             if len(pts) < 2 or any(not isinstance(p,list) or len(p)!=2 or
@@ -337,7 +357,8 @@ def statement(f,s,t):
     f.text(d.get('note',''),640,565,24,p['muted'])
 
 
-DRAWERS={name:globals()[name] for name in KINDS}
+DRAWERS={name:globals()[name] for name in KINDS if name not in EXTRA_DRAWERS}
+DRAWERS.update(EXTRA_DRAWERS)
 
 
 def render_frame(episode,style,timeline,frame,width):

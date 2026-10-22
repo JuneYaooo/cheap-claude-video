@@ -8,99 +8,34 @@
       "暗蓝地图、运动方向箭头、路况提示和网络推演；先现实反常，再解释机制。",
       "本模板保留节点连续性与前后对照，使用清楚标注的理想模型独立推导。"
     ],
-    "adaptation": "保留叙事机制，重写文案、配色、布局、图形与配乐。"
+    "adaptation": "保留叙事机制，重写文案、配色、布局、图形与配乐。",
+    "v2_changes": [
+      "道路由节点图升级为城市地图，车辆方向和密度可见。",
+      "前后对照锁定相同几何和总流量，唯一变化是新增连接。",
+      "数字由同一模型参数计算，所有人改路与单人退出分别解释。"
+    ]
   },
   "sources": [
     "https://supernet.isenberg.umass.edu/braess/braess-new.html"
   ],
   "scenes": [
     {
-      "kind": "network",
+      "kind": "system_city",
       "duration": 7,
       "heading": "多一条捷径，反而更堵？",
       "eyebrow": "BRAESS PARADOX / 看见局部选择的代价",
       "data": {
-        "nodes": [
-          {
-            "label": "起点",
-            "xy": [
-              200,
-              380
-            ]
-          },
-          {
-            "label": "A",
-            "xy": [
-              640,
-              255
-            ]
-          },
-          {
-            "label": "B",
-            "xy": [
-              640,
-              500
-            ]
-          },
-          {
-            "label": "终点",
-            "xy": [
-              1080,
-              380
-            ]
-          }
-        ],
-        "edges": [
-          {
-            "a": 0,
-            "b": 1,
-            "label": "流量 ÷ 100 分钟",
-            "label_offset": [
-              -5,
-              -30
-            ]
-          },
-          {
-            "a": 1,
-            "b": 3,
-            "label": "固定 45 分钟",
-            "label_offset": [
-              5,
-              -30
-            ]
-          },
-          {
-            "a": 0,
-            "b": 2,
-            "label": "固定 45 分钟",
-            "label_offset": [
-              -5,
-              32
-            ]
-          },
-          {
-            "a": 2,
-            "b": 3,
-            "label": "流量 ÷ 100 分钟",
-            "label_offset": [
-              5,
-              32
-            ]
-          },
-          {
-            "a": 1,
-            "b": 2,
-            "label": "新增捷径",
-            "label_offset": [
-              100,
-              0
-            ],
-            "accent": true
-          }
-        ],
-        "reveal_at": 1,
-        "badge": "65 分钟 → 80 分钟",
-        "note": "理想化路网演示；粒子速度不代表实测车速"
+        "mode": "hook",
+        "total_flow": 4000,
+        "flow_divisor": 100,
+        "fixed_time": 45,
+        "shortcut_time": 0,
+        "node_labels": [
+          "起点",
+          "A",
+          "B",
+          "终点"
+        ]
       },
       "captions": [
         {
@@ -116,81 +51,22 @@
       ]
     },
     {
-      "kind": "network",
+      "kind": "system_city",
       "duration": 10,
       "heading": "先把规则画清楚",
       "eyebrow": "01 / 一张可以算清的地图",
       "data": {
-        "nodes": [
-          {
-            "label": "起点",
-            "xy": [
-              200,
-              380
-            ]
-          },
-          {
-            "label": "A",
-            "xy": [
-              640,
-              255
-            ]
-          },
-          {
-            "label": "B",
-            "xy": [
-              640,
-              500
-            ]
-          },
-          {
-            "label": "终点",
-            "xy": [
-              1080,
-              380
-            ]
-          }
-        ],
-        "edges": [
-          {
-            "a": 0,
-            "b": 1,
-            "label": "流量 ÷ 100 分钟",
-            "label_offset": [
-              -5,
-              -30
-            ]
-          },
-          {
-            "a": 1,
-            "b": 3,
-            "label": "固定 45 分钟",
-            "label_offset": [
-              5,
-              -30
-            ]
-          },
-          {
-            "a": 0,
-            "b": 2,
-            "label": "固定 45 分钟",
-            "label_offset": [
-              -5,
-              32
-            ]
-          },
-          {
-            "a": 2,
-            "b": 3,
-            "label": "流量 ÷ 100 分钟",
-            "label_offset": [
-              5,
-              32
-            ]
-          }
-        ],
-        "badge": "共有 4000 辆车",
-        "note": "蓝色路段时间由各边标签定义；所有路线方向均为起点到终点。"
+        "mode": "rules",
+        "total_flow": 4000,
+        "flow_divisor": 100,
+        "fixed_time": 45,
+        "shortcut_time": 0,
+        "node_labels": [
+          "起点",
+          "A",
+          "B",
+          "终点"
+        ]
       },
       "captions": [
         {
@@ -211,81 +87,22 @@
       ]
     },
     {
-      "kind": "network",
+      "kind": "system_city",
       "duration": 9,
       "heading": "原先，两边各走一半",
       "eyebrow": "02 / 原来的均衡",
       "data": {
-        "nodes": [
-          {
-            "label": "起点",
-            "xy": [
-              200,
-              380
-            ]
-          },
-          {
-            "label": "A",
-            "xy": [
-              640,
-              255
-            ]
-          },
-          {
-            "label": "B",
-            "xy": [
-              640,
-              500
-            ]
-          },
-          {
-            "label": "终点",
-            "xy": [
-              1080,
-              380
-            ]
-          }
-        ],
-        "edges": [
-          {
-            "a": 0,
-            "b": 1,
-            "label": "2000 ÷ 100 = 20 分钟",
-            "label_offset": [
-              -5,
-              -30
-            ]
-          },
-          {
-            "a": 1,
-            "b": 3,
-            "label": "45 分钟",
-            "label_offset": [
-              5,
-              -30
-            ]
-          },
-          {
-            "a": 0,
-            "b": 2,
-            "label": "45 分钟",
-            "label_offset": [
-              -5,
-              32
-            ]
-          },
-          {
-            "a": 2,
-            "b": 3,
-            "label": "2000 ÷ 100 = 20 分钟",
-            "label_offset": [
-              5,
-              32
-            ]
-          }
-        ],
-        "badge": "20 + 45 = 65 分钟",
-        "note": "2000 辆走上路，2000 辆走下路。"
+        "mode": "baseline",
+        "total_flow": 4000,
+        "flow_divisor": 100,
+        "fixed_time": 45,
+        "shortcut_time": 0,
+        "node_labels": [
+          "起点",
+          "A",
+          "B",
+          "终点"
+        ]
       },
       "captions": [
         {
@@ -301,93 +118,22 @@
       ]
     },
     {
-      "kind": "network",
+      "kind": "system_city",
       "duration": 10,
       "heading": "现在，A 到 B 瞬间可达",
       "eyebrow": "03 / 每个人都有走捷径的理由",
       "data": {
-        "nodes": [
-          {
-            "label": "起点",
-            "xy": [
-              200,
-              380
-            ]
-          },
-          {
-            "label": "A",
-            "xy": [
-              640,
-              255
-            ]
-          },
-          {
-            "label": "B",
-            "xy": [
-              640,
-              500
-            ]
-          },
-          {
-            "label": "终点",
-            "xy": [
-              1080,
-              380
-            ]
-          }
-        ],
-        "edges": [
-          {
-            "a": 0,
-            "b": 1,
-            "label": "流量 ÷ 100 分钟",
-            "label_offset": [
-              -5,
-              -30
-            ]
-          },
-          {
-            "a": 1,
-            "b": 3,
-            "label": "固定 45 分钟",
-            "label_offset": [
-              5,
-              -30
-            ]
-          },
-          {
-            "a": 0,
-            "b": 2,
-            "label": "固定 45 分钟",
-            "label_offset": [
-              -5,
-              32
-            ]
-          },
-          {
-            "a": 2,
-            "b": 3,
-            "label": "流量 ÷ 100 分钟",
-            "label_offset": [
-              5,
-              32
-            ]
-          },
-          {
-            "a": 1,
-            "b": 2,
-            "label": "0 分钟",
-            "label_offset": [
-              85,
-              0
-            ],
-            "accent": true,
-            "flow": 10
-          }
-        ],
-        "reveal_at": 1,
-        "badge": "一条零耗时连接",
-        "note": "这里只改变一条边，其他规则不变。"
+        "mode": "shortcut",
+        "total_flow": 4000,
+        "flow_divisor": 100,
+        "fixed_time": 45,
+        "shortcut_time": 0,
+        "node_labels": [
+          "起点",
+          "A",
+          "B",
+          "终点"
+        ]
       },
       "captions": [
         {
@@ -408,79 +154,22 @@
       ]
     },
     {
-      "kind": "network",
+      "kind": "system_city",
       "duration": 10,
       "heading": "最后，所有人挤上同一路线",
       "eyebrow": "04 / 这才是反直觉的地方",
       "data": {
-        "nodes": [
-          {
-            "label": "起点",
-            "xy": [
-              200,
-              380
-            ]
-          },
-          {
-            "label": "A",
-            "xy": [
-              640,
-              255
-            ]
-          },
-          {
-            "label": "B",
-            "xy": [
-              640,
-              500
-            ]
-          },
-          {
-            "label": "终点",
-            "xy": [
-              1080,
-              380
-            ]
-          }
-        ],
-        "edges": [
-          {
-            "a": 0,
-            "b": 1,
-            "label": "4000 ÷ 100 = 40",
-            "flow": 18,
-            "speed": 0.09,
-            "label_offset": [
-              0,
-              -30
-            ]
-          },
-          {
-            "a": 1,
-            "b": 2,
-            "label": "0",
-            "accent": true,
-            "flow": 10,
-            "speed": 0.16,
-            "label_offset": [
-              48,
-              0
-            ]
-          },
-          {
-            "a": 2,
-            "b": 3,
-            "label": "4000 ÷ 100 = 40",
-            "flow": 18,
-            "speed": 0.09,
-            "label_offset": [
-              0,
-              32
-            ]
-          }
-        ],
-        "badge": "40 + 0 + 40 = 80 分钟",
-        "note": "若单独改回上路或下路：约 40 + 45 = 85 分钟。"
+        "mode": "equilibrium",
+        "total_flow": 4000,
+        "flow_divisor": 100,
+        "fixed_time": 45,
+        "shortcut_time": 0,
+        "node_labels": [
+          "起点",
+          "A",
+          "B",
+          "终点"
+        ]
       },
       "captions": [
         {
@@ -501,16 +190,22 @@
       ]
     },
     {
-      "kind": "statement",
+      "kind": "system_city",
       "duration": 9,
       "heading": "个人最快，未必整体最快",
       "eyebrow": "05 / 从一条捷径，看到整个系统",
       "data": {
-        "lines": [
-          "一条路的价值",
-          "要看它改变了什么"
-        ],
-        "note": "特定网络可能出现此效应，并非修路总会加剧拥堵。"
+        "mode": "compare",
+        "total_flow": 4000,
+        "flow_divisor": 100,
+        "fixed_time": 45,
+        "shortcut_time": 0,
+        "node_labels": [
+          "起点",
+          "A",
+          "B",
+          "终点"
+        ]
       },
       "captions": [
         {
@@ -525,5 +220,20 @@
         }
       ]
     }
-  ]
+  ],
+  "planning": {
+    "hook_candidates": [
+      "一条免费的捷径，为什么让所有人更慢？",
+      "每个人都选了最快的路，城市却更堵了。",
+      "给拥堵的路网加一条路，结果多花15分钟。"
+    ],
+    "selected_hook": "一条免费的捷径，为什么让所有人更慢？",
+    "reason": "先给出免费与更慢的反差，再用相同地图前后对照兑现问题。",
+    "first_3_seconds": "同屏出现改路前后网络与65/80分钟，不先念定义。",
+    "first_20_seconds": "反常结果、统一人口、路段计时规则，然后基线分流。",
+    "risk_notes": [
+      "动画粒子为示意，不是交通仿真。",
+      "特定理想网络，不能推出修路必定添堵。"
+    ]
+  }
 }
