@@ -33,7 +33,9 @@ KINDS = {'doors', 'matrix', 'bars', 'sequence', 'curve', 'network', 'recall', 'l
 EXTRA_DRAWERS = {}
 SCENE_VALIDATORS = {}
 # Fixed, local component modules; never execute a module path from episode input.
-for component_name in ('probability', 'decision', 'system', 'learning'):
+for component_name in ('probability', 'decision', 'system', 'learning',
+                       'probability_reference', 'decision_reference',
+                       'system_reference', 'learning_reference'):
     component_path = ROOT / 'scripts' / 'vibe_scenes' / (component_name + '.py')
     if not component_path.exists():
         continue
@@ -365,19 +367,21 @@ def render_frame(episode,style,timeline,frame,width):
     index,t,duration=timeline.at_frame(frame)
     scene=episode['scenes'][index];global_t=frame/timeline.fps
     f=Frame(style,global_t,width)
-    f.text(style['label'],70,50,18,style['accent'],anchor='left',latin=True,max_width=600)
-    f.text(f'{index+1:02d} / {len(episode["scenes"]):02d}',1210,50,18,style['muted'],anchor='right',latin=True)
-    f.line([(70,78),(1210,78)])
-    f.text(scene.get('eyebrow',''),640,114,18,style['muted'],latin=True)
-    f.text(scene['heading'],640,169,43,style['ink'],max_width=1120)
+    if not scene.get('full_bleed',False):
+        f.text(style['label'],70,50,18,style['accent'],anchor='left',latin=True,max_width=600)
+        f.text(f'{index+1:02d} / {len(episode["scenes"]):02d}',1210,50,18,style['muted'],anchor='right',latin=True)
+        f.line([(70,78),(1210,78)])
+        f.text(scene.get('eyebrow',''),640,114,18,style['muted'],latin=True)
+        f.text(scene['heading'],640,169,43,style['ink'],max_width=1120)
     DRAWERS[scene['kind']](f,scene,t)
-    for cap in scene['captions']:
+    for cap in scene['captions'] if scene.get('show_captions',True) else []:
         if cap['start']<=t<cap['end']:
             txt=cap['text'];lines=[txt] if len(txt)<=30 else [txt[:len(txt)//2],txt[len(txt)//2:]]
             for n,line in enumerate(lines):
-                f.text(line,640,646+n*32-(16 if len(lines)>1 else 0),27,style['ink'])
-    f.line([(70,696),(1210,696)])
-    f.line([(70,696),(70+1140*global_t/timeline.duration,696)],style['accent'],2)
+                f.text(line,640,646+n*32-(16 if len(lines)>1 else 0),27,scene.get('caption_color',style['ink']))
+    if not scene.get('full_bleed',False):
+        f.line([(70,696),(1210,696)])
+        f.line([(70,696),(70+1140*global_t/timeline.duration,696)],style['accent'],2)
     # Brief dissolves retain a visible composition rather than inserting black frames.
     transition=min(k.ease(t/.28),k.ease((duration-t)/.28))
     if transition<1:
@@ -416,6 +420,7 @@ def main():
     ap=argparse.ArgumentParser(description=__doc__)
     ap.add_argument('--capsule',choices=CAPSULES,required=True)
     ap.add_argument('--input',type=Path,required=True)
+    ap.add_argument('--style',type=Path,help='optional palette JSON for this run')
     ap.add_argument('--out',type=Path,required=True,help='new run folder under output/')
     ap.add_argument('--font',type=Path,required=True,help='Chinese font file')
     ap.add_argument('--latin-font',type=Path,required=True)
@@ -426,8 +431,9 @@ def main():
     out=args.out.resolve()
     if not out.is_relative_to(ROOT/'output'):
         ap.error('--out must be inside this project output/')
-    style_path=ROOT/'capsules'/f'{args.capsule}.capsule'/'assets/style.json'
+    style_path=args.style or ROOT/'capsules'/f'{args.capsule}.capsule'/'assets/style.json'
     style=json.loads(style_path.read_text())
+    style.setdefault('display_font',str(args.latin_font))
     episode=json.loads(args.input.read_text())
     validate(episode,style)
     if not args.preview and (out/'release/final.mp4').exists():

@@ -1,0 +1,11 @@
+{
+  "label": "SYSTEM",
+  "background": "#070d16",
+  "ink": "#e8e5d6",
+  "accent": "#e2c780",
+  "secondary": "#64d4dd",
+  "muted": "#8e9aa9",
+  "grid": "#16202d",
+  "bpm": 88,
+  "particles": false
+}

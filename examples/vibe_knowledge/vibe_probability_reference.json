@@ -1,0 +1,418 @@
+{
+  "title": "换一扇门，还是相信第一次？",
+  "description": "按标准主持规则，分别观察历史争议、真实种子模拟和百门放大。",
+  "seed": 119,
+  "sources": [
+    "https://www.stat.berkeley.edu/~stark/SticiGui/Text/montyHall.htm"
+  ],
+  "reference_analysis": {
+    "reference_url": "https://www.douyin.com/video/7691663869630121657",
+    "source_duration": 142.012,
+    "source_dimensions": [
+      1280,
+      720
+    ],
+    "evidence": "真实网页与下载原片每5秒接触表，原片可解码；尚未完成逐帧和完整音频对照。",
+    "observed": [
+      "蓝金拱门、主持人、羊与车、倒计时。",
+      "米黄杂志/打字机/信件/天平，绿黑板人物与电脑。",
+      "双策略1000局模拟点阵、收敛曲线、100扇门扩展。",
+      "回归舞台揭晓与金色片尾。"
+    ],
+    "adaptation": "重画全部场景与角色；保留142秒级顺序与材质转换；文案重写，历史数量不照搬，鸽子实验替换为条件边界。模拟为本期实际seed119随机结果，不复制原片335/665。",
+    "audio": "原创程序配乐、无旁白、未复用原片声音；音色/节拍相似性未确认。",
+    "claim": "有明确差异的风格复刻，非100%复制。"
+  },
+  "copywriting_structure": {
+    "raw_topic": "蒙提霍尔问题",
+    "hook_variants": [
+      "换一扇门，还是相信第一次？",
+      "眼前只剩两扇门，为什么机会不一样？",
+      "一千次之后，你还会坚持吗？"
+    ],
+    "chosen": "换一扇门，还是相信第一次？",
+    "reason": "直接选择与舞台动作同屏，结论留给模拟。",
+    "first_3_seconds": "蓝金舞台三门亮起，原选门被标记，主持人开始开第三门。",
+    "first_20_seconds": "先选、倒计时，随后切入米黄文献争议。",
+    "risk_notes": [
+      "标准主持规则不可省略。",
+      "模拟是程序随机试验而非真实人类实验。",
+      "原片的历史数量与动物实验没有独立核验，未照搬。"
+    ],
+    "topic_angle": "从直觉选择出发，用标准主持规则、同局双策略模拟与百门放大解释换门优势。",
+    "script_outline": [
+      "换一扇门，还是相信第一次？",
+      "一道小题，为什么引来争论？",
+      "把争论写成两种策略",
+      "最有说服力的直觉，也可能漏掉条件",
+      "天平上的两个结果，真的一样重？",
+      "让可重复的试验，检验直觉",
+      "一千局之后",
+      "把三扇门，放大成一百扇",
+      "回到三扇门，机制没有变",
+      "先记住条件，再记住答案",
+      "换门不是否定自己，是接受新信息",
+      "换，还是不换？"
+    ],
+    "cover_text": "换门，还是坚持？",
+    "title": "换一扇门，还是相信第一次？"
+  },
+  "scenes": [
+    {
+      "kind": "probability_ref_stage",
+      "duration": 10,
+      "heading": "换一扇门，还是相信第一次？",
+      "eyebrow": "",
+      "full_bleed": true,
+      "caption_color": "#f1ead9",
+      "data": {},
+      "captions": [
+        {
+          "start": 0.0,
+          "end": 3.333,
+          "text": "三扇门，一辆车，两只羊。你先选了 1 号门。"
+        },
+        {
+          "start": 3.333,
+          "end": 6.667,
+          "text": "知道答案的主持人打开 3 号门：一只羊。"
+        },
+        {
+          "start": 6.667,
+          "end": 10.0,
+          "text": "现在，先在心里选好：坚持，还是换？"
+        }
+      ]
+    },
+    {
+      "kind": "probability_ref_paper",
+      "duration": 12,
+      "heading": "一道小题，为什么引来争论？",
+      "eyebrow": "",
+      "full_bleed": true,
+      "caption_color": "#f1ead9",
+      "data": {
+        "masthead": "概率档案",
+        "byline": "Ask Marilyn · 一个选择问题"
+      },
+      "captions": [
+        {
+          "start": 0.0,
+          "end": 4.0,
+          "text": "玛丽莲曾在专栏里回答：换门更好。"
+        },
+        {
+          "start": 4.0,
+          "end": 8.0,
+          "text": "这个答案引来争论，甚至有教授来信反对。"
+        },
+        {
+          "start": 8.0,
+          "end": 12.0,
+          "text": "问题看着简单：剩下两个，不就是各一半吗？"
+        }
+      ]
+    },
+    {
+      "kind": "probability_ref_typewriter",
+      "duration": 10,
+      "heading": "把争论写成两种策略",
+      "eyebrow": "",
+      "full_bleed": true,
+      "caption_color": "#f1ead9",
+      "data": {
+        "lines": [
+          "始终坚持：胜率 1/3",
+          "始终换门：胜率 2/3",
+          "为什么，换门能改变机会？"
+        ]
+      },
+      "captions": [
+        {
+          "start": 0.0,
+          "end": 5.0,
+          "text": "她的结论不是说：换门每次都能赢。"
+        },
+        {
+          "start": 5.0,
+          "end": 10.0,
+          "text": "而是同样的规则玩很多次，换门会赢得更多。"
+        }
+      ]
+    },
+    {
+      "kind": "probability_ref_letters",
+      "duration": 10,
+      "heading": "最有说服力的直觉，也可能漏掉条件",
+      "eyebrow": "",
+      "full_bleed": true,
+      "caption_color": "#f1ead9",
+      "data": {
+        "questions": [
+          "只剩两扇，还不是一半？",
+          "第一次选择，真的还重要吗？"
+        ]
+      },
+      "captions": [
+        {
+          "start": 0.0,
+          "end": 5.0,
+          "text": "把“两个结果”和“等可能”连起来，非常自然。"
+        },
+        {
+          "start": 5.0,
+          "end": 10.0,
+          "text": "但自然的解释，还不是完整的证明。"
+        }
+      ]
+    },
+    {
+      "kind": "probability_ref_balance",
+      "duration": 10,
+      "heading": "天平上的两个结果，真的一样重？",
+      "eyebrow": "直觉假设：剩下两个就是各一半",
+      "full_bleed": true,
+      "caption_color": "#f1ead9",
+      "data": {},
+      "captions": [
+        {
+          "start": 0.0,
+          "end": 3.333,
+          "text": "你看见的，是两扇仍然关着的门。"
+        },
+        {
+          "start": 3.333,
+          "end": 6.667,
+          "text": "你容易忽略的，是主持人为什么打开那一扇。"
+        },
+        {
+          "start": 6.667,
+          "end": 10.0,
+          "text": "他知道奖品在哪，开门受规则约束。"
+        }
+      ]
+    },
+    {
+      "kind": "probability_ref_chalk",
+      "duration": 10,
+      "heading": "让可重复的试验，检验直觉",
+      "eyebrow": "标准规则固定后才比较",
+      "full_bleed": true,
+      "caption_color": "#f1ead9",
+      "data": {
+        "lines": [
+          "随机放置奖品",
+          "随机选定初始门",
+          "总开未选中的空门",
+          "坚持 / 换门同步记分"
+        ]
+      },
+      "captions": [
+        {
+          "start": 0.0,
+          "end": 3.333,
+          "text": "奖品每局重新随机放置，主持人总开未选中的空门。"
+        },
+        {
+          "start": 3.333,
+          "end": 6.667,
+          "text": "若有两扇空门可开，他随机选一扇，每局都允许换门。"
+        },
+        {
+          "start": 6.667,
+          "end": 10.0,
+          "text": "让两种策略面对同一局，比较一千次。"
+        }
+      ]
+    },
+    {
+      "kind": "probability_ref_simulation",
+      "duration": 20,
+      "heading": "一千局之后",
+      "eyebrow": "",
+      "full_bleed": true,
+      "caption_color": "#f1ead9",
+      "data": {
+        "seed": 119,
+        "trials": 1000
+      },
+      "captions": [
+        {
+          "start": 0.0,
+          "end": 4.0,
+          "text": "开始时，几个结果就会让胜率大幅摇摆。"
+        },
+        {
+          "start": 4.0,
+          "end": 8.0,
+          "text": "继续重复，随机起伏逐渐变小。"
+        },
+        {
+          "start": 8.0,
+          "end": 12.0,
+          "text": "左边始终坚持，右边始终换门。"
+        },
+        {
+          "start": 12.0,
+          "end": 16.0,
+          "text": "样本频率靠近三分之一和三分之二。"
+        },
+        {
+          "start": 16.0,
+          "end": 20.0,
+          "text": "这是本片程序模拟，不保证每次恰好同一个比例。"
+        }
+      ]
+    },
+    {
+      "kind": "probability_ref_hundred",
+      "duration": 16,
+      "heading": "把三扇门，放大成一百扇",
+      "eyebrow": "",
+      "full_bleed": true,
+      "caption_color": "#f1ead9",
+      "data": {
+        "remaining": 73
+      },
+      "captions": [
+        {
+          "start": 0.0,
+          "end": 4.0,
+          "text": "先选 1 号门，最初选中的机会只有百分之一。"
+        },
+        {
+          "start": 4.0,
+          "end": 8.0,
+          "text": "主持人知道答案，替你排除另外 98 扇空门。"
+        },
+        {
+          "start": 8.0,
+          "end": 12.0,
+          "text": "现在唯一可换的门，接住了最初没选中的那一组。"
+        },
+        {
+          "start": 12.0,
+          "end": 16.0,
+          "text": "在这些规则下，始终换门的获胜概率是百分之九十九。"
+        }
+      ]
+    },
+    {
+      "kind": "probability_ref_grouping",
+      "duration": 10,
+      "heading": "回到三扇门，机制没有变",
+      "eyebrow": "",
+      "full_bleed": true,
+      "caption_color": "#f1ead9",
+      "data": {},
+      "captions": [
+        {
+          "start": 0.0,
+          "end": 3.333,
+          "text": "原选门最初占三分之一，另外两扇合占三分之二。"
+        },
+        {
+          "start": 3.333,
+          "end": 6.667,
+          "text": "主持人从那一组中排除空门，而不是随便开门。"
+        },
+        {
+          "start": 6.667,
+          "end": 10.0,
+          "text": "你换过去，押的就是“最初没选对”。"
+        }
+      ]
+    },
+    {
+      "kind": "probability_ref_conditions",
+      "duration": 10,
+      "heading": "先记住条件，再记住答案",
+      "eyebrow": "规则一变，必须重新计算",
+      "full_bleed": true,
+      "caption_color": "#f1ead9",
+      "data": {
+        "panels": [
+          [
+            "这里的标准规则",
+            [
+              "奖品等概率放置",
+              "主持人知道答案",
+              "每局都开空门并允许换门"
+            ],
+            "#e4c57f"
+          ],
+          [
+            "不能直接套用的情形",
+            [
+              "主持人随意开门",
+              "只在某些局提供换门",
+              "奖品放置并非等概率"
+            ],
+            "#b9cee8"
+          ]
+        ]
+      },
+      "captions": [
+        {
+          "start": 0.0,
+          "end": 5.0,
+          "text": "三分之二，不是一句放之四海而皆准的口号。"
+        },
+        {
+          "start": 5.0,
+          "end": 10.0,
+          "text": "如果主持人的行为改了，你面对的就是另一道题。"
+        }
+      ]
+    },
+    {
+      "kind": "probability_ref_return",
+      "duration": 14,
+      "heading": "换门不是否定自己，是接受新信息",
+      "eyebrow": "",
+      "full_bleed": true,
+      "caption_color": "#f1ead9",
+      "data": {},
+      "captions": [
+        {
+          "start": 0.0,
+          "end": 4.667,
+          "text": "第一次的选择，不需要变成之后的承诺。"
+        },
+        {
+          "start": 4.667,
+          "end": 9.333,
+          "text": "规则告诉你：换门更有利，但这一局仍可能输。"
+        },
+        {
+          "start": 9.333,
+          "end": 14.0,
+          "text": "好决策不是保证赢，而是认真比较机会。"
+        }
+      ]
+    },
+    {
+      "kind": "probability_ref_finale",
+      "duration": 10,
+      "heading": "换，还是不换？",
+      "eyebrow": "",
+      "full_bleed": true,
+      "caption_color": "#f1ead9",
+      "data": {
+        "question": "你第一次的选择，和现在一样吗？"
+      },
+      "captions": [
+        {
+          "start": 0.0,
+          "end": 5.0,
+          "text": "下次遇到“机会各一半”，先多问一句。"
+        },
+        {
+          "start": 5.0,
+          "end": 10.0,
+          "text": "这条信息，是怎么产生的？"
+        }
+      ]
+    }
+  ]
+}

@@ -3,3 +3,7 @@ assets:
   path: style.json
   type: json
   description: 不含当期事实的色彩、字体策略与音乐节奏
+- id: reference_visual_style
+  path: reference-style.json
+  type: json
+  description: 夜景城市、弯曲发光路网、耗时数字、纸张与手机插入镜头

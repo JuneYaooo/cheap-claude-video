@@ -1,0 +1,11 @@
+{
+  "label": "",
+  "background": "#080e22",
+  "grid": "#18223c",
+  "ink": "#f1ead9",
+  "accent": "#e4c57f",
+  "secondary": "#b9cee8",
+  "muted": "#9ca8b3",
+  "bpm": 94,
+  "particles": false
+}

@@ -33,6 +33,16 @@ video_elements:
     - decision_curve
     - decision_odds
     - decision_epilogue
+    - decision_ref_title
+    - decision_ref_field
+    - decision_ref_curve
+    - decision_ref_trials
+    - decision_ref_words
+    - decision_ref_age
+    - decision_ref_threshold
+    - decision_ref_rank
+    - decision_ref_recap
+    - decision_ref_end
   forbidden:
   - fixed_topic_defaults
   - unlabelled_simulation

@@ -3,3 +3,7 @@ assets:
   path: style.json
   type: json
   description: 不含当期事实的色彩、字体策略与音乐节奏
+- id: reference_visual_style
+  path: reference-style.json
+  type: json
+  description: 黑金巨型轮廓字、候选序列、概率曲线、结果点阵与留白终章

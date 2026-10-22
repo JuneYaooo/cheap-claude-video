@@ -3,3 +3,7 @@ assets:
   path: style.json
   type: json
   description: 不含当期事实的色彩、字体策略与音乐节奏
+- id: reference_visual_style
+  path: reference-style.json
+  type: json
+  description: 暗蓝渐晕、黑体黄重点、白色简笔图解与章节行动卡

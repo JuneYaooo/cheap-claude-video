@@ -1,0 +1,567 @@
+{
+  "title": "先把书合上：让学习多一次提取",
+  "description": "从熟悉感到主动提取：先回忆，再核对，用一个小循环检查理解。",
+  "seed": 109,
+  "tags": "#Vibe知识大赏 #主动回忆 #学习方法",
+  "sources": [
+    "https://pubmed.ncbi.nlm.nih.gov/16507066/"
+  ],
+  "reference_analysis": {
+    "reference_url": "https://www.douyin.com/video/7693397287104890490",
+    "source_media": {
+      "duration": 142.3,
+      "width": 1280,
+      "height": 720,
+      "fps": 30
+    },
+    "visual_evidence": "Reference visual grammar was checked against timestamped samples covering its 142.3-second timeline; this does not claim full-speed playback or audio audition.",
+    "retained_traits": [
+      "深蓝径向渐晕与大幅留白",
+      "白色细线几何图解、金黄重点",
+      "中心大字开场、灰色编号分章",
+      "时钟/桶/笔记/胶片/手提箱/泳池/金字塔/行动卡语法",
+      "左图右字，分步出现，结尾比喻回扣",
+      "142.3秒横版结构"
+    ],
+    "differences": [
+      "主题改为提取练习，文案与具体时间分配重写；不是原题逐镜复制",
+      "使用可用粗黑体近似原片字形；确切字体未识别。调用渲染器时须提供合法可用的中文字体文件。",
+      "去除无可靠来源的记忆率等级与固定效率倍数",
+      "原片遗忘曲线段改为研究真实延迟条件日历",
+      "原创程序配乐，无原片配音；源音轨虽可用，尚未完成听觉核验",
+      "未使用原片像素、作者标识或原音频进行成片"
+    ],
+    "audio_review_status": "not_auditioned"
+  },
+  "hook_candidates": [
+    "先把书合上。",
+    "看了很多遍，为什么还是讲不出？",
+    "你的学习，缺少一次不看答案的检验。"
+  ],
+  "opening_plan": {
+    "selected": "先把书合上。",
+    "reason": "短促动作开场，对齐参考的中心大字与反常识停顿，直接指向本期提取任务。",
+    "first_3_seconds": "全幅深蓝渐晕，中心大字逐步出现，第二行引出不看提示。",
+    "first_20_seconds": "中心动作指令→读书时间投入与独立回答的反差→漏桶比喻引出检验。"
+  },
+  "scenes": [
+    {
+      "kind": "lr_title",
+      "duration": 4,
+      "heading": "先把书合上。",
+      "full_bleed": true,
+      "show_captions": false,
+      "data": {
+        "title": "先把书合上。",
+        "subtitle": "看看，脑中还剩下什么。",
+        "sub_at": 1.6
+      },
+      "captions": [
+        {
+          "start": 0.0,
+          "end": 2.0,
+          "text": "先把书合上。"
+        },
+        {
+          "start": 2.0,
+          "end": 4.0,
+          "text": "看看，脑中还剩下什么。"
+        }
+      ]
+    },
+    {
+      "kind": "lr_clock",
+      "duration": 8,
+      "heading": "读了很久，为什么说不出来？",
+      "full_bleed": true,
+      "show_captions": false,
+      "data": {
+        "clock_label": "时间一直在走",
+        "lines": [
+          "读了很久",
+          "反复看了好几遍",
+          "合上，却说不出"
+        ],
+        "accent_line": 2,
+        "note": "熟悉的感觉，可能遮住理解的缺口。"
+      },
+      "captions": [
+        {
+          "start": 0.0,
+          "end": 2.667,
+          "text": "你花了很长时间，反复翻过同一页。"
+        },
+        {
+          "start": 2.667,
+          "end": 5.333,
+          "text": "看着每句话都熟悉，合上却说不出主线。"
+        },
+        {
+          "start": 5.333,
+          "end": 8.0,
+          "text": "这时需要检验的，是不看提示能不能想起来。"
+        }
+      ]
+    },
+    {
+      "kind": "lr_bucket",
+      "duration": 8,
+      "heading": "输入之后，还要能提取",
+      "full_bleed": true,
+      "show_captions": false,
+      "data": {
+        "lines": [
+          "读进去",
+          "还要拿得出来",
+          "给学习加一次检验"
+        ],
+        "accent_line": 2,
+        "note": "漏桶只是比喻，不代表固定遗忘速度。"
+      },
+      "captions": [
+        {
+          "start": 0.0,
+          "end": 2.667,
+          "text": "阅读提供材料，提取让你检查自己能留下什么。"
+        },
+        {
+          "start": 2.667,
+          "end": 5.333,
+          "text": "这个桶只是一个比喻，不能用它计算遗忘率。"
+        },
+        {
+          "start": 5.333,
+          "end": 8.0,
+          "text": "我们要做的，是发现哪里需要重新学习。"
+        }
+      ]
+    },
+    {
+      "kind": "lr_chapter",
+      "duration": 3,
+      "heading": "看着熟。",
+      "full_bleed": true,
+      "show_captions": false,
+      "data": {
+        "number": "01",
+        "label": "容易混淆的第一件事",
+        "title": "看着熟。"
+      },
+      "captions": [
+        {
+          "start": 0.0,
+          "end": 3.0,
+          "text": "第一件事：别把看着熟，当成能独立说出来。"
+        }
+      ]
+    },
+    {
+      "kind": "lr_notes",
+      "duration": 10,
+      "heading": "划过的重点，不会自动变成回答",
+      "full_bleed": true,
+      "show_captions": false,
+      "data": {
+        "lines": [
+          "划过重点",
+          "又读了一遍",
+          "能用自己的话讲吗？"
+        ],
+        "accent_line": 2,
+        "tag": "提示一直在眼前",
+        "note": "把书盖上，再说一遍。"
+      },
+      "captions": [
+        {
+          "start": 0.0,
+          "end": 3.333,
+          "text": "划重点可以帮助你定位内容，但它不是掌握的证明。"
+        },
+        {
+          "start": 3.333,
+          "end": 6.667,
+          "text": "当答案一直在眼前，很多提示都在帮你完成理解。"
+        },
+        {
+          "start": 6.667,
+          "end": 10.0,
+          "text": "试着拿掉提示，看看自己能说到哪一步。"
+        }
+      ]
+    },
+    {
+      "kind": "lr_film",
+      "duration": 9,
+      "heading": "熟悉，与亲手做到，是两回事",
+      "full_bleed": true,
+      "show_captions": false,
+      "data": {
+        "label": "重复接触 ≠ 独立提取",
+        "lines": [
+          "看过很多遍",
+          "不等于能自己讲出来",
+          "换一次任务，才知道缺口在哪里。"
+        ]
+      },
+      "captions": [
+        {
+          "start": 0.0,
+          "end": 3.0,
+          "text": "重复看一段解释，会让你越来越熟悉它。"
+        },
+        {
+          "start": 3.0,
+          "end": 6.0,
+          "text": "但熟悉和独立表达，是不同的任务。"
+        },
+        {
+          "start": 6.0,
+          "end": 9.0,
+          "text": "让自己从零组织答案，缺口才会出现。"
+        }
+      ]
+    },
+    {
+      "kind": "lr_case",
+      "duration": 10,
+      "heading": "存进去，还要拿出来",
+      "full_bleed": true,
+      "show_captions": false,
+      "data": {
+        "open_at": 3.5,
+        "lines": [
+          "信息放进去了",
+          "现在试着",
+          "从里面取出来"
+        ],
+        "accent_line": 2,
+        "note": "不用追求完整，先找回主线。"
+      },
+      "captions": [
+        {
+          "start": 0.0,
+          "end": 3.333,
+          "text": "把知识想成放进箱子的材料。"
+        },
+        {
+          "start": 3.333,
+          "end": 6.667,
+          "text": "提取练习，就是不看目录，试着把需要的东西找出来。"
+        },
+        {
+          "start": 6.667,
+          "end": 10.0,
+          "text": "想不全没有关系：发现遗漏，正是核对的起点。"
+        }
+      ]
+    },
+    {
+      "kind": "lr_chapter",
+      "duration": 3,
+      "heading": "动手试。",
+      "full_bleed": true,
+      "show_captions": false,
+      "data": {
+        "number": "02",
+        "label": "让问题变得具体",
+        "title": "动手试。"
+      },
+      "captions": [
+        {
+          "start": 0.0,
+          "end": 3.0,
+          "text": "第二件事：把抽象的方法，变成一次可执行动作。"
+        }
+      ]
+    },
+    {
+      "kind": "lr_pool",
+      "duration": 10,
+      "heading": "知道步骤，还要亲自实践",
+      "full_bleed": true,
+      "show_captions": false,
+      "data": {
+        "jump_at": 4,
+        "lines": [
+          "看过动作讲解",
+          "还要亲自练习",
+          "学习也需要行动"
+        ],
+        "accent_line": 2,
+        "note": "用一个小任务，检验自己的理解。"
+      },
+      "captions": [
+        {
+          "start": 0.0,
+          "end": 3.333,
+          "text": "看过游泳动作，不等于身体已经会做。"
+        },
+        {
+          "start": 3.333,
+          "end": 6.667,
+          "text": "学习知识也一样，可以用一个小任务检查理解。"
+        },
+        {
+          "start": 6.667,
+          "end": 10.0,
+          "text": "接下来不用评价自己，只试着回忆。"
+        }
+      ]
+    },
+    {
+      "kind": "lr_recall",
+      "duration": 17,
+      "heading": "一次小小的回忆练习",
+      "full_bleed": true,
+      "show_captions": false,
+      "data": {
+        "title": "先看六个词，然后不看提示",
+        "items": [
+          "桥梁",
+          "月亮",
+          "咖啡",
+          "雨伞",
+          "火车",
+          "森林"
+        ],
+        "hide_at": 5,
+        "reveal_at": 13,
+        "phase_labels": [
+          "先看五秒，试着记住",
+          "重新出现：检查你漏掉了什么"
+        ],
+        "note": "这只是体验练习，不能证明长期学习效果。"
+      },
+      "captions": [
+        {
+          "start": 0,
+          "end": 5,
+          "text": "先花五秒，看一眼这六个词。"
+        },
+        {
+          "start": 5,
+          "end": 13,
+          "text": "提示消失后，在脑中把它们找回来。"
+        },
+        {
+          "start": 13,
+          "end": 17,
+          "text": "现在看答案，检查漏掉了哪几个。"
+        }
+      ]
+    },
+    {
+      "kind": "lr_pyramid",
+      "duration": 12,
+      "heading": "把学习变成一个循环",
+      "full_bleed": true,
+      "show_captions": false,
+      "data": {
+        "levels": [
+          "再提取",
+          "查漏补缺",
+          "合书复述",
+          "读一小节"
+        ],
+        "lines": [
+          "不用不停翻页",
+          "换成四个动作",
+          "读、说、查、再试"
+        ],
+        "accent_line": 2,
+        "note": "从一小节开始，把遗漏带回下一轮。",
+        "diagram_note": "图形表示操作顺序，不是记忆率等级或效果百分比。"
+      },
+      "captions": [
+        {
+          "start": 0.0,
+          "end": 4.0,
+          "text": "可以把学习分成四步：阅读、合书复述、核对，再提取。"
+        },
+        {
+          "start": 4.0,
+          "end": 8.0,
+          "text": "这张图表示操作顺序，并不是不同方法的记忆率。"
+        },
+        {
+          "start": 8.0,
+          "end": 12.0,
+          "text": "先从一小节开始，不需要一次复述整本书。"
+        }
+      ]
+    },
+    {
+      "kind": "lr_chapter",
+      "duration": 3,
+      "heading": "先回忆，再核对。",
+      "full_bleed": true,
+      "show_captions": false,
+      "data": {
+        "number": "03",
+        "label": "让下一轮更有方向",
+        "title": "先回忆，再核对。"
+      },
+      "captions": [
+        {
+          "start": 0.0,
+          "end": 3.0,
+          "text": "第三件事：让回忆和反馈接在一起。"
+        }
+      ]
+    },
+    {
+      "kind": "lr_practice",
+      "duration": 12,
+      "heading": "用三个问题写出主线",
+      "full_bleed": true,
+      "show_captions": false,
+      "data": {
+        "steps": [
+          "核心是什么？",
+          "为什么成立？",
+          "能用在哪里？"
+        ],
+        "lines": [
+          "合上书",
+          "写出三个回答",
+          "再打开，查缺口"
+        ],
+        "accent_line": 2,
+        "note": "没想起来的内容，需要重新确认。"
+      },
+      "captions": [
+        {
+          "start": 0.0,
+          "end": 4.0,
+          "text": "合上书，先回答核心是什么。"
+        },
+        {
+          "start": 4.0,
+          "end": 8.0,
+          "text": "再解释为什么成立，并举一个实际应用的例子。"
+        },
+        {
+          "start": 8.0,
+          "end": 12.0,
+          "text": "完成后核对材料，把不准确和遗漏的地方补上。"
+        }
+      ]
+    },
+    {
+      "kind": "lr_delay",
+      "duration": 13,
+      "heading": "研究比较了延迟保持",
+      "full_bleed": true,
+      "show_captions": false,
+      "data": {
+        "delays": [
+          "两天后",
+          "一周后"
+        ],
+        "lines": [
+          "研究里的延迟测试",
+          "先前提取组",
+          "保持得更好"
+        ],
+        "accent_line": 2,
+        "note": "立即表现与长期保持，需要分别看。",
+        "source_label": "Roediger & Karpicke · Psychological Science · 2006"
+      },
+      "captions": [
+        {
+          "start": 0.0,
+          "end": 4.333,
+          "text": "相关实验比较了两天后和一周后的保持。"
+        },
+        {
+          "start": 4.333,
+          "end": 8.667,
+          "text": "在这些延迟测试中，先前提取组表现更好。"
+        },
+        {
+          "start": 8.667,
+          "end": 13.0,
+          "text": "这并不意味着所有材料都立刻学得更快，也没有固定效率倍数。"
+        }
+      ]
+    },
+    {
+      "kind": "lr_cards",
+      "duration": 13,
+      "heading": "今天，从一小节开始",
+      "full_bleed": true,
+      "show_captions": false,
+      "data": {
+        "titles": [
+          "合书说一遍",
+          "翻书查缺口",
+          "过段时间再试"
+        ],
+        "lines": [
+          [
+            "选一小节",
+            "用自己的话",
+            "说出主线"
+          ],
+          [
+            "对照原文",
+            "补上遗漏",
+            "修正错误"
+          ],
+          [
+            "再做一次提取",
+            "观察薄弱处",
+            "调整下一轮"
+          ]
+        ],
+        "note": "练习间隔依材料与目标安排，不存在人人通用的固定答案。"
+      },
+      "captions": [
+        {
+          "start": 0.0,
+          "end": 4.333,
+          "text": "今天只选一个小段落，合书后试着讲清主线。"
+        },
+        {
+          "start": 4.333,
+          "end": 8.667,
+          "text": "然后对照原文，补上遗漏，纠正错误。"
+        },
+        {
+          "start": 8.667,
+          "end": 13.0,
+          "text": "过一段时间再提取一次，让复习针对真正薄弱的部分。"
+        }
+      ]
+    },
+    {
+      "kind": "lr_bucket",
+      "duration": 7.3,
+      "heading": "每天，一次小检验",
+      "full_bleed": true,
+      "show_captions": false,
+      "data": {
+        "repaired": true,
+        "lines": [
+          "让“我看懂了”",
+          "多一次检验",
+          "我能说出来。"
+        ],
+        "accent_line": 2,
+        "note": "读一小节。合上书。试一次。"
+      },
+      "captions": [
+        {
+          "start": 0.0,
+          "end": 3.65,
+          "text": "把“我看懂了”，多检验一次。"
+        },
+        {
+          "start": 3.65,
+          "end": 7.3,
+          "text": "合上书，看自己能不能说出来。"
+        }
+      ]
+    }
+  ]
+}

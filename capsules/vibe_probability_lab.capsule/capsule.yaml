@@ -2,7 +2,7 @@ schema_version: capsule.package.v1
 profile: video.okf.capsule.v1
 name: vibe_probability_lab
 display_name: 概率实验室
-version: 1
+version: 2
 status: draft
 execution_mode: preset
 category: code_rendered_graphics

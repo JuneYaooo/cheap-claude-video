@@ -27,6 +27,19 @@ video_elements:
     - recall
     - loop
     - statement
+    - lr_title
+    - lr_clock
+    - lr_bucket
+    - lr_chapter
+    - lr_notes
+    - lr_film
+    - lr_case
+    - lr_pool
+    - lr_recall
+    - lr_pyramid
+    - lr_practice
+    - lr_delay
+    - lr_cards
   forbidden:
   - fixed_topic_defaults
   - unlabelled_simulation

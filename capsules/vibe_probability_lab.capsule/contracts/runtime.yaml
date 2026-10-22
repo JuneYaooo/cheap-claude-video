@@ -33,6 +33,18 @@ video_elements:
     - probability_odds
     - probability_boundary
     - probability_result
+    - probability_ref_stage
+    - probability_ref_paper
+    - probability_ref_typewriter
+    - probability_ref_letters
+    - probability_ref_balance
+    - probability_ref_chalk
+    - probability_ref_simulation
+    - probability_ref_hundred
+    - probability_ref_grouping
+    - probability_ref_conditions
+    - probability_ref_return
+    - probability_ref_finale
   forbidden:
   - fixed_topic_defaults
   - unlabelled_simulation

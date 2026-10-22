@@ -68,6 +68,25 @@ python3.12 scripts/local_video_qa.py \
 
 新组件的字段与默认示例见对应模块和 `examples/vibe_knowledge/`。完整成片之外，可先用不同模型参数、候选序列或练习词组预览，检查模块是否仍符合新内容。
 
+## 全画幅参考风格
+
+`*_reference.py` 组件提供四种更完整的场景语言：蓝金舞台与纸张叙事、黑金数学可视化、夜景城市路网、暗蓝简笔教学。对应 `examples/vibe_knowledge/vibe_*_reference.json` 和 `.style.json` 分别保存内容与配色；原有预设和示例仍可运行。
+
+```bash
+python3.12 scripts/render_vibe_template.py \
+  --capsule vibe_system_blueprint \
+  --input examples/vibe_knowledge/vibe_system_reference.json \
+  --style examples/vibe_knowledge/vibe_system_reference.style.json \
+  --out output/system-reference-preview \
+  --font /absolute/path/to/chinese-font.ttf \
+  --latin-font /absolute/path/to/latin-font.ttf \
+  --preview
+```
+
+每幕的 `full_bleed: true` 隐藏共享页眉、页码及进度线，让场景自行构图；`show_captions: false` 允许文字直接排入画面，同时保留 SRT 导出；`caption_color` 可调整烧录字幕颜色。`--style` 仅覆盖当前运行的配色，不修改胶囊默认值。
+
+参考风格示例使用重新编写的文案、程序绘制的几何与原创程序配乐，不包含参考作者的原始音画。参考镜头顺序、素材、字体、镜头运动和声音仍有差异；输入中的 `reference_analysis` 记录已实现元素与差异，技术检查分数不表示视频相似度。
+
 ## 输出与打包
 
 `release/` 包含 MP4、封面、SRT 和发布文案；`work/` 保留当期输入、样式、原创配乐、连续画面母版、编辑计划和时间线；`qa/` 包含代表帧。编辑计划引用真实连续画面母版，并以 `scene_map` 标注每幕，不伪造独立镜头文件。

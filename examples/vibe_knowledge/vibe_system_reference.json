@@ -1,0 +1,459 @@
+{
+  "title": "多一条路，为什么一起变慢？",
+  "description": "用夜景城市、道路粒子和可计算的四节点模型解释布雷斯悖论。4000辆车，固定段45分钟，可变段流量除以100；新增零耗时连接使均衡从65变为80分钟。",
+  "seed": 109,
+  "sources": [
+    {
+      "url": "https://www.douyin.com/video/7691358069305586094",
+      "role": "visual_reference"
+    },
+    {
+      "url": "https://supernet.isenberg.umass.edu/braess/braess-new.html",
+      "role": "scientific_source"
+    }
+  ],
+  "reference_analysis": {
+    "source_duration": 146,
+    "output_duration": 146,
+    "reference_style": "night city, luminous curved road network, paper history insert, navigation phone, mechanical analogy, large numeric HUD",
+    "replicated": [
+      "aerial city and street lighting",
+      "curved two-route network",
+      "cyan shortcut and red congestion",
+      "paper and phone inserts",
+      "65/80/65 model sequence",
+      "mechanical network analogy",
+      "closing city return"
+    ],
+    "differences": [
+      "newly drawn buildings and roads; camera path differs",
+      "rewritten text; Seoul and London examples omitted",
+      "mechanical scene is a qualitative illustration",
+      "original procedural soundtrack; original audio not reproduced",
+      "exact fonts, timing and lighting not pixel-matched"
+    ],
+    "similarity_percentage": null
+  },
+  "scenes": [
+    {
+      "kind": "system_ref",
+      "duration": 8,
+      "heading": "多一条路，为什么一起变慢？",
+      "full_bleed": true,
+      "data": {
+        "mode": "hook",
+        "model": {
+          "flow": 4000,
+          "divisor": 100,
+          "fixed": 45,
+          "shortcut": 0
+        },
+        "history_year": 1968
+      },
+      "captions": [
+        {
+          "start": 0.5,
+          "end": 3.9,
+          "text": "同样的四千辆车，多一条路，反而更慢。"
+        },
+        {
+          "start": 4.0,
+          "end": 7.7,
+          "text": "这不是导航失灵，而是网络里的相互影响。"
+        }
+      ]
+    },
+    {
+      "kind": "system_ref",
+      "duration": 10,
+      "heading": "城市里的反直觉",
+      "full_bleed": true,
+      "data": {
+        "mode": "grid",
+        "model": {
+          "flow": 4000,
+          "divisor": 100,
+          "fixed": 45,
+          "shortcut": 0
+        },
+        "history_year": 1968
+      },
+      "captions": [
+        {
+          "start": 0.5,
+          "end": 4.9,
+          "text": "道路数量增加，选择也跟着改变。"
+        },
+        {
+          "start": 5.0,
+          "end": 9.7,
+          "text": "每个人的最短路线，可能互相挤占。"
+        }
+      ]
+    },
+    {
+      "kind": "system_ref",
+      "duration": 10,
+      "heading": "封路的反例",
+      "full_bleed": true,
+      "data": {
+        "mode": "news",
+        "model": {
+          "flow": 4000,
+          "divisor": 100,
+          "fixed": 45,
+          "shortcut": 0
+        },
+        "history_year": 1968
+      },
+      "captions": [
+        {
+          "start": 0.5,
+          "end": 4.9,
+          "text": "纽约第四十二街封闭后，预期的大堵车没有出现。"
+        },
+        {
+          "start": 5.0,
+          "end": 9.7,
+          "text": "这个反例提醒我们：连接多，并不保证整体更快。"
+        }
+      ]
+    },
+    {
+      "kind": "system_ref",
+      "duration": 9,
+      "heading": "各自聪明，一起拥堵",
+      "full_bleed": true,
+      "data": {
+        "mode": "phone",
+        "model": {
+          "flow": 4000,
+          "divisor": 100,
+          "fixed": 45,
+          "shortcut": 0
+        },
+        "history_year": 1968
+      },
+      "captions": [
+        {
+          "start": 0.5,
+          "end": 4.4,
+          "text": "导航帮你寻找捷径，也在帮其他人找。"
+        },
+        {
+          "start": 4.5,
+          "end": 8.7,
+          "text": "当所有人都做同样的选择，原来的捷径就变了。"
+        }
+      ]
+    },
+    {
+      "kind": "system_ref",
+      "duration": 9,
+      "heading": "布雷斯悖论",
+      "full_bleed": true,
+      "data": {
+        "mode": "paper",
+        "model": {
+          "flow": 4000,
+          "divisor": 100,
+          "fixed": 45,
+          "shortcut": 0
+        },
+        "history_year": 1968
+      },
+      "captions": [
+        {
+          "start": 0.5,
+          "end": 4.4,
+          "text": "布雷斯在一九六八年指出这类网络悖论。"
+        },
+        {
+          "start": 4.5,
+          "end": 8.7,
+          "text": "一个人的最优选择，不等于所有人的最优结果。"
+        }
+      ]
+    },
+    {
+      "kind": "system_ref",
+      "duration": 10,
+      "heading": "建立同一个模型",
+      "full_bleed": true,
+      "data": {
+        "mode": "rules",
+        "model": {
+          "flow": 4000,
+          "divisor": 100,
+          "fixed": 45,
+          "shortcut": 0
+        },
+        "history_year": 1968
+      },
+      "captions": [
+        {
+          "start": 0.5,
+          "end": 4.9,
+          "text": "设四千辆车同时出发，两段道路固定四十五分钟。"
+        },
+        {
+          "start": 5.0,
+          "end": 9.7,
+          "text": "另外两段的耗时，等于通过车辆数除以一百。"
+        }
+      ]
+    },
+    {
+      "kind": "system_ref",
+      "duration": 10,
+      "heading": "原来的平衡",
+      "full_bleed": true,
+      "data": {
+        "mode": "before",
+        "model": {
+          "flow": 4000,
+          "divisor": 100,
+          "fixed": 45,
+          "shortcut": 0
+        },
+        "history_year": 1968
+      },
+      "captions": [
+        {
+          "start": 0.5,
+          "end": 4.9,
+          "text": "没有中间路时，车辆均分到上下两条路线。"
+        },
+        {
+          "start": 5.0,
+          "end": 9.7,
+          "text": "每条路两千辆：二十加四十五，都是六十五分钟。"
+        }
+      ]
+    },
+    {
+      "kind": "system_ref",
+      "duration": 10,
+      "heading": "新增连接的诱惑",
+      "full_bleed": true,
+      "data": {
+        "mode": "temptation",
+        "model": {
+          "flow": 4000,
+          "divisor": 100,
+          "fixed": 45,
+          "shortcut": 0
+        },
+        "history_year": 1968
+      },
+      "captions": [
+        {
+          "start": 0.5,
+          "end": 4.9,
+          "text": "现在增加一条理想化的零耗时连接。"
+        },
+        {
+          "start": 5.0,
+          "end": 9.7,
+          "text": "在原来的流量下，跨过去只需二十加二十。"
+        }
+      ]
+    },
+    {
+      "kind": "system_ref",
+      "duration": 10,
+      "heading": "所有人跟着改道",
+      "full_bleed": true,
+      "data": {
+        "mode": "flow",
+        "model": {
+          "flow": 4000,
+          "divisor": 100,
+          "fixed": 45,
+          "shortcut": 0
+        },
+        "history_year": 1968
+      },
+      "captions": [
+        {
+          "start": 0.5,
+          "end": 4.9,
+          "text": "更多人跟着走捷径，两段拥挤道路的车也更多。"
+        },
+        {
+          "start": 5.0,
+          "end": 9.7,
+          "text": "原来只需二十分钟的路段，渐渐需要四十分钟。"
+        }
+      ]
+    },
+    {
+      "kind": "system_ref",
+      "duration": 12,
+      "heading": "新的自利平衡",
+      "full_bleed": true,
+      "data": {
+        "mode": "after",
+        "model": {
+          "flow": 4000,
+          "divisor": 100,
+          "fixed": 45,
+          "shortcut": 0
+        },
+        "history_year": 1968
+      },
+      "captions": [
+        {
+          "start": 0.5,
+          "end": 5.9,
+          "text": "所有人改走中间：四十加零加四十，八十分钟。"
+        },
+        {
+          "start": 6.0,
+          "end": 11.7,
+          "text": "单独退回旧路线需要八十五分钟，所以没人愿意先退。"
+        }
+      ]
+    },
+    {
+      "kind": "system_ref",
+      "duration": 10,
+      "heading": "关掉连接之后",
+      "full_bleed": true,
+      "data": {
+        "mode": "close",
+        "model": {
+          "flow": 4000,
+          "divisor": 100,
+          "fixed": 45,
+          "shortcut": 0
+        },
+        "history_year": 1968
+      },
+      "captions": [
+        {
+          "start": 0.5,
+          "end": 4.9,
+          "text": "关掉中间路，车辆重新分流。"
+        },
+        {
+          "start": 5.0,
+          "end": 9.7,
+          "text": "每个人又回到六十五分钟，比刚才少十五分钟。"
+        }
+      ]
+    },
+    {
+      "kind": "system_ref",
+      "duration": 12,
+      "heading": "平衡取决于连接",
+      "full_bleed": true,
+      "data": {
+        "mode": "spring",
+        "model": {
+          "flow": 4000,
+          "divisor": 100,
+          "fixed": 45,
+          "shortcut": 0
+        },
+        "history_year": 1968
+      },
+      "captions": [
+        {
+          "start": 0.5,
+          "end": 5.9,
+          "text": "这个现象的关键，是网络怎样分配负担。"
+        },
+        {
+          "start": 6.0,
+          "end": 11.7,
+          "text": "连接改变之后，每个部分会重新寻找平衡。"
+        }
+      ]
+    },
+    {
+      "kind": "system_ref",
+      "duration": 10,
+      "heading": "模型适用的条件",
+      "full_bleed": true,
+      "data": {
+        "mode": "boundary",
+        "model": {
+          "flow": 4000,
+          "divisor": 100,
+          "fixed": 45,
+          "shortcut": 0
+        },
+        "history_year": 1968
+      },
+      "captions": [
+        {
+          "start": 0.5,
+          "end": 4.9,
+          "text": "这依赖固定需求、自利选择和特定道路成本。"
+        },
+        {
+          "start": 5.0,
+          "end": 9.7,
+          "text": "它不是修路有害的结论，现实交通还要测量和验证。"
+        }
+      ]
+    },
+    {
+      "kind": "system_ref",
+      "duration": 8,
+      "heading": "回到同一座城市",
+      "full_bleed": true,
+      "data": {
+        "mode": "return",
+        "model": {
+          "flow": 4000,
+          "divisor": 100,
+          "fixed": 45,
+          "shortcut": 0
+        },
+        "history_year": 1968
+      },
+      "captions": [
+        {
+          "start": 0.5,
+          "end": 3.9,
+          "text": "我们改变的不是司机智力，而是他们面对的规则。"
+        },
+        {
+          "start": 4.0,
+          "end": 7.7,
+          "text": "理解一个结果，不能只看每个人的决定。"
+        }
+      ]
+    },
+    {
+      "kind": "system_ref",
+      "duration": 8,
+      "heading": "看见彼此的连接",
+      "full_bleed": true,
+      "data": {
+        "mode": "conclusion",
+        "model": {
+          "flow": 4000,
+          "divisor": 100,
+          "fixed": 45,
+          "shortcut": 0
+        },
+        "history_year": 1968
+      },
+      "captions": [
+        {
+          "start": 0.5,
+          "end": 3.9,
+          "text": "看清局部的捷径，也要看清整体的网络。"
+        },
+        {
+          "start": 4.0,
+          "end": 7.7,
+          "text": "更好的结果，有时来自重新组织连接。"
+        }
+      ]
+    }
+  ]
+}
