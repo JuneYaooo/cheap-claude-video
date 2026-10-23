@@ -3,6 +3,9 @@ series_fixed:
 - narrative_structure
 - editorial_voice
 - workflow_evidence_sequence
+- visual_skin
+- caption_style
+- semantic_motion_vocabulary
 episode_variable:
 - industry
 - role

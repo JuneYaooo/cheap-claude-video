@@ -39,3 +39,8 @@ rules:
   severity: blocker
   category: motion
   rule: 回看静帧报警与完整连续音画；排除卡顿、口型漂移、重复帧补时长和无意义运动。
+- id: presenter_visual_language
+  type: visual_gate
+  severity: blocker
+  category: visual
+  rule: 检查人物、实操、配图、对照的实际样帧与连续片段：白字描边字幕清晰且位置稳定，重点词不遮主体，材料、时间、关系、修改使用适合的图形，动画在相应语义处发生。不能用整片重复列表或开头一次性弹入代替过程解释。

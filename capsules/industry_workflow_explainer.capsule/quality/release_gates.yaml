@@ -7,3 +7,4 @@ gates:
 - human_revision_and_reuse_required
 - evidence_alignment_required
 - motion_audio_review_required
+- presenter_visual_language
