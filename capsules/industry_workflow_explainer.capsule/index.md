@@ -2,7 +2,7 @@
 okf_version: '0.1'
 type: Video Capsule Bundle Index
 title: 行业岗位 AI 提效讲解
-description: 围绕一个岗位的重复任务，从真实材料、整理判断、具体产物到人工修改和下次复用，写出有工作细节的自然口播，并衔接实操演示。
+description: 以完整参考口播引导岗位讲解，从重复任务的材料、判断与具体产物讲到人工修改和下次复用，并衔接真实操作演示。
 profile: video.okf.capsule.v1
 primary_workflow: tool_demo_explainer
 tags:
@@ -14,7 +14,7 @@ tags:
 
 # 行业岗位 AI 提效讲解
 
-围绕一个岗位的重复任务，从真实材料、整理判断、具体产物到人工修改和下次复用，写出有工作细节的自然口播，并衔接实操演示。
+以完整参考口播引导岗位讲解，从重复任务的材料、判断与具体产物讲到人工修改和下次复用，并衔接真实操作演示。
 
 # Entry
 
@@ -37,7 +37,8 @@ tags:
 
 # Assets
 
-* [Asset Index](assets/index.yaml) - Reusable packaged assets and references. Asset files are not loaded unless needed.
+* [Asset Index](assets/index.yaml) - Reusable packaged assets and references.
+* [完整参考口播](assets/writing-reference.txt) - 初稿与作者自改时读取的完整写作参考。
 
 # Quality
 

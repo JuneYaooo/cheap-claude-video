@@ -7,6 +7,7 @@ series_fixed:
 - caption_style
 - semantic_motion_vocabulary
 - authoring_model
+- writing_reference_corpus
 episode_variable:
 - industry
 - role

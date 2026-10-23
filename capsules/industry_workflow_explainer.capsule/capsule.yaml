@@ -7,7 +7,7 @@ status: draft
 execution_mode: preset
 category: industry_explainer
 primary_workflow: tool_demo_explainer
-summary: 围绕一个岗位的重复任务，从真实材料、整理判断、具体产物到人工修改和下次复用，写出有工作细节的自然口播，并衔接实操演示。
+summary: 以完整参考口播引导岗位讲解，从重复任务的材料、判断与具体产物讲到人工修改和下次复用，并衔接真实操作演示。
 capabilities:
 - real_screen_recording
 - digital_human
@@ -37,6 +37,8 @@ read_order:
   - contracts/input_schema.yaml
   - contracts/content_scope.yaml
   - contracts/production_contract.yaml
+  - assets/index.yaml
+  - assets/writing-reference.txt
   - recipes/structure.md
   - recipes/copy.md
   - recipes/visual.md

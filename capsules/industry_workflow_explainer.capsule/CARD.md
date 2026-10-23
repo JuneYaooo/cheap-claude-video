@@ -1,7 +1,7 @@
 ---
 type: Video Capsule Card
 title: 行业岗位 AI 提效讲解
-description: 围绕一个岗位的重复任务，从真实材料、整理判断、具体产物到人工修改和下次复用，写出有工作细节的自然口播，并衔接实操演示。
+description: 以完整参考口播引导岗位讲解，从重复任务的材料、判断与具体产物讲到人工修改和下次复用，并衔接真实操作演示。
 stage: routing
 profile: video.okf.capsule.v1
 primary_workflow: tool_demo_explainer
@@ -16,7 +16,7 @@ tags:
 
 ## Purpose
 
-围绕一个岗位的重复任务，从真实材料、整理判断、具体产物到人工修改和下次复用，写出有工作细节的自然口播，并衔接实操演示。
+以完整参考口播引导岗位讲解，从重复任务的材料、判断与具体产物讲到人工修改和下次复用，并衔接真实操作演示。
 
 ## 适用场景
 
@@ -24,7 +24,7 @@ tags:
 
 ## 使用方式
 
-提供岗位、任务、原来怎么做、可用材料、实际工具和期望产物。先读 [口播配方](recipes/copy.md) 与 [行文结构](recipes/structure.md)，默认由 Kimi 写初稿，再由 Kimi 自行去 AI 味；确认口播后进入分镜。
+提供岗位、任务、原来怎么做、可用材料、实际工具和期望产物。先读 [完整参考口播](assets/writing-reference.txt)、[口播配方](recipes/copy.md) 与 [行文结构](recipes/structure.md)，默认由 Kimi 写初稿，再由 Kimi 自行去 AI 味；确认口播后进入分镜。
 
 调用示例：用 `industry_workflow_explainer` 配方，为 {岗位} 写一期 {重复任务} 的 AI 提效口播，工具是 {工具}，先确认文案。
 

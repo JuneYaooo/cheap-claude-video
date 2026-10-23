@@ -1,1 +1,6 @@
-assets: []
+assets:
+- key: workflow_narration_reference
+  role: style_reference
+  reuse: reference_only
+  path: writing-reference.txt
+  description: 完整口播参考，供文案作者学习岗位情境、工作细节、工具引入、修改与复用的叙述方式。原稿中的产品能力、日期、个人体验和效率数字仅属于参考内容，不作为当期事实。

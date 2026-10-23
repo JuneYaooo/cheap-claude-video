@@ -54,3 +54,8 @@ rules:
   severity: blocker
   category: copy
   rule: 新增或改写口播须核对实际调用记录：初稿与自然表达修改均由本期解析出的 authoring_model 执行，未明确覆盖时采用输入合同的默认模型。模型不可用、未实际调用或由执行助手代写时，不得冒称已完成指定作者流程；已确认且未修改的稿件可直接沿用。
+- id: full_writing_reference_used
+  type: copy_gate
+  severity: blocker
+  category: copy
+  rule: 新增口播与作者自改的调用输入须包含 assets/writing-reference.txt 全文；仅提供摘要、结构清单或风格要求不算完成参考。检查工作情境、细节展开和自然衔接，且没有把参考中的产品能力、个人经历或效率数字移作本期事实。已确认且未修改的稿件可直接沿用。
