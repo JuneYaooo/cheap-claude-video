@@ -8,3 +8,4 @@ gates:
 - actionable_delivery
 - natural_narration
 - semantic_reference_alignment
+- natural_copy_review

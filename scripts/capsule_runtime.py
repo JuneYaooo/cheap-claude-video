@@ -22,7 +22,7 @@ from src.capsule_package_loader import (
     load_runtime_contract,
     load_stage_context,
 )
-from src.capsule_copywriting_contract import default_copywriting_structure_contract  # noqa: E402
+from src.capsule_copywriting_contract import NATURAL_COPY_REVIEW_PROMPT, default_copywriting_structure_contract  # noqa: E402
 
 SKILL_DIR = SCRIPT_DIR.parent
 PROJECT_ROOT = SKILL_DIR
@@ -490,6 +490,8 @@ def build_capsule_prompt(
     hard_rules.append(
         "写稿前必须按 copywriting_structure_contract 先把用户话题转成角度、前三秒、前 20 秒、完整结构、封面、标题和风险提醒。"
     )
+
+    hard_rules.append(NATURAL_COPY_REVIEW_PROMPT)
 
     prompt = {
         "user_requirements": user_requirements,

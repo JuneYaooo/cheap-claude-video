@@ -8,6 +8,7 @@ Agno 通用视频生成 Tasks 定义模块
 import re
 from typing import Dict, Any
 
+from src.capsule_copywriting_contract import NATURAL_COPY_REVIEW_PROMPT
 from src.logger import get_logger
 
 logger = get_logger('general_video_tasks')
@@ -1473,6 +1474,14 @@ CREATE_VIDEO_DIRECTIONS_PROMPT = """
 # ============================================================
 # 任务执行器
 # ============================================================
+
+# Keep the same editorial pass on initial drafts and duration-driven rewrites.
+CREATE_STORY_PROMPT += NATURAL_COPY_REVIEW_PROMPT
+CREATE_STORYBOARD_PROMPT += NATURAL_COPY_REVIEW_PROMPT
+GENERATE_NARRATION_PROMPT += NATURAL_COPY_REVIEW_PROMPT
+REWRITE_NARRATION_TO_DURATION_PROMPT += NATURAL_COPY_REVIEW_PROMPT
+CREATE_VIDEO_DIRECTIONS_PROMPT += NATURAL_COPY_REVIEW_PROMPT
+
 
 class AgnoVideoTasks:
     """

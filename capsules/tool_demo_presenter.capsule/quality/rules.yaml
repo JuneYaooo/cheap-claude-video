@@ -53,3 +53,10 @@ rules:
   rule: Reference adaptations retain the task, viewer benefit and causal structure
     while replacing episode assets; do not replace a tool tutorial with a character
     showcase.
+- id: natural_copy_review
+  type: copy_gate
+  severity: blocker
+  category: copy
+  rule: Review every draft and revision for topic, viewer benefit, evidence and spoken
+    clarity before TTS. Remove empty claims and formulaic phrasing without inventing
+    experiences. A keyword scan or self-score alone is not editorial review.

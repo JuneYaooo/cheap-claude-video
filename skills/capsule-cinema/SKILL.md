@@ -57,6 +57,10 @@ Use only workflows and providers registered in the runtime. Do not invent an uns
 - Treat lifecycle `blocked` as blocked and `review_required` as pending. Do not report either state as complete.
 - Keep final deliverables under `output/`. A release must include its artifact manifest, applicable QA reports, repair plan when needed, and `release/release_checkpoint.json`.
 
+## Review every writing pass
+
+For every new or revised narration, script, title, cover line, or publishing copy, read `references/natural-copy-review.md`. Review theme, viewer benefit, and evidence before language. Apply the same pass after duration edits and before TTS; keep revision notes out of audience copy. This also applies to manual production outside the runtime wrappers. Preserve user-supplied verbatim text when requested.
+
 ## Protect credentials and local state
 
 - Read credentials only from agent-managed secrets, system environment variables, or a user-created root `.env` for standalone local execution.

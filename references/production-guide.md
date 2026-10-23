@@ -204,6 +204,8 @@ Rules:
 - If a local-script capsule needs versioned packages, nest them under `release/<version_slug>/` and still keep/update the root `artifact_manifest.json`.
 - Final delivery should cite the standard run package paths.
 
+For every writing or rewriting pass, apply [natural-copy-review.md](natural-copy-review.md) before narration or publishing.
+
 ## Production Loop
 
 1. **Plan the viewer experience**: propagation assets, hook, target audience, platform, total duration, audio strategy.

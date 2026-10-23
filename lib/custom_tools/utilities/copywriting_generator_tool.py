@@ -10,6 +10,7 @@ import json
 import requests
 from pathlib import Path
 from typing import Dict, Any, List
+from src.capsule_copywriting_contract import NATURAL_COPY_REVIEW_PROMPT
 from src.logger import get_logger
 
 logger = get_logger("copywriting_generator")
@@ -125,7 +126,7 @@ class CopywritingGeneratorTool:
 1. 参考对标文案的风格和调性，但要有创新
 2. 结合视频实际内容，确保文案与画面相符
 3. 文案要有吸引力，能引发用户互动
-4. 融入当前流行的话题和表达方式
+4. 使用与本片内容相关的自然表达，不编造热点或跟风用语
 5. 生成1条主文案和3-5个相关标签
 
 **返回格式（JSON）：**
@@ -137,7 +138,7 @@ class CopywritingGeneratorTool:
 
 请直接返回JSON格式，不要有其他文字。"""
         
-        return prompt
+        return prompt + "\n" + NATURAL_COPY_REVIEW_PROMPT
     
     def _call_llm(self, prompt: str) -> Dict[str, Any]:
         """调用大模型API生成文案"""
