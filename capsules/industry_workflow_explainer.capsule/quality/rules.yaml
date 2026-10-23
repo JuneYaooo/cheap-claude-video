@@ -49,3 +49,8 @@ rules:
   severity: blocker
   category: motion
   rule: 数字人出镜段须检查排除字幕和贴片的人脸/口部区域，并核对可疑帧与源片段时间映射。字幕在变或整片模型评价通过，不能代替人物局部运动检查；重复读取旧帧、口播继续而人物冻结时禁止交付。
+- id: authoring_model_execution
+  type: copy_gate
+  severity: blocker
+  category: copy
+  rule: 新增或改写口播须核对实际调用记录：初稿与自然表达修改均由本期解析出的 authoring_model 执行，未明确覆盖时采用输入合同的默认模型。模型不可用、未实际调用或由执行助手代写时，不得冒称已完成指定作者流程；已确认且未修改的稿件可直接沿用。

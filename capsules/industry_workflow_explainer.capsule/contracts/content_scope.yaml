@@ -6,6 +6,7 @@ series_fixed:
 - visual_skin
 - caption_style
 - semantic_motion_vocabulary
+- authoring_model
 episode_variable:
 - industry
 - role
@@ -27,7 +28,6 @@ episode_variable:
 - work_constraints
 - source_facts
 - approved_opening
-- authoring_model
 - evidence
 - delivery_stage
 forbidden_reusable_literals: []

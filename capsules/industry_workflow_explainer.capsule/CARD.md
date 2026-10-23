@@ -24,7 +24,7 @@ tags:
 
 ## 使用方式
 
-提供岗位、任务、原来怎么做、可用材料、实际工具和期望产物。先读 [口播配方](recipes/copy.md) 与 [行文结构](recipes/structure.md)，完成写稿和作者自改，再进入分镜。
+提供岗位、任务、原来怎么做、可用材料、实际工具和期望产物。先读 [口播配方](recipes/copy.md) 与 [行文结构](recipes/structure.md)，默认由 Kimi 写初稿，再由 Kimi 自行去 AI 味；确认口播后进入分镜。
 
 调用示例：用 `industry_workflow_explainer` 配方，为 {岗位} 写一期 {重复任务} 的 AI 提效口播，工具是 {工具}，先确认文案。
 

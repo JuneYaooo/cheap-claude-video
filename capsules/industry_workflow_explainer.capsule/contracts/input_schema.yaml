@@ -70,7 +70,8 @@ fields:
   authoring_model:
     type: string
     required: false
-    description: 用户指定的文案作者模型
+    description: 口播初稿及作者自改使用的模型；默认 Kimi，可由本期明确指定覆盖
+    default: kimi-k3
   avatar:
     type: object
     required: false

@@ -9,3 +9,4 @@ gates:
 - motion_audio_review_required
 - presenter_visual_language
 - presenter_region_motion
+- authoring_model_execution
