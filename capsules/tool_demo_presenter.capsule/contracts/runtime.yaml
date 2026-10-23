@@ -15,8 +15,9 @@ copywriting_structure_contract:
   topic_to_angle_required: true
   hook_variants_required: 3
   true_first_line_audit_required: true
-  viewer_pressure_required: true
+  viewer_pressure_required: false
   counterintuitive_thesis_required: false
+  natural_language_review_required: true
   concrete_scene_required: true
   cover_title_alignment_required: true
   required_outputs:
@@ -38,6 +39,7 @@ copywriting_structure_contract:
   opening_gate:
     max_seconds: 3
     must_contain_one_of:
+    - a concrete task question grounded in a familiar method or desired result
     - concrete pain
     - identity pressure
     - counterintuitive verdict
@@ -49,3 +51,5 @@ copywriting_structure_contract:
     - generic advice
     - soft greeting
     - metadata-only hook
+    - an isolated implementation detail without the overall task
+    - a topic announcement without a viewer question or visible result

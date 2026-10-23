@@ -14,8 +14,11 @@ rules:
   type: copy_gate
   severity: blocker
   category: copy
-  rule: The real first 0-3 seconds must contain concrete pain, identity pressure,
-    a counterintuitive verdict, a status/control stake, or a completion gap.
+  rule: The real first 0-3 seconds must establish a concrete task question grounded
+    in a familiar method or desired result, concrete pain, identity pressure,
+    a counterintuitive verdict, a status/control stake, or a completion gap. Do not
+    require invented pressure or a reversal. An isolated implementation detail or
+    topic announcement without a viewer question or visible result fails.
 - id: theme_comprehension
   type: copy_gate
   severity: blocker
@@ -26,8 +29,10 @@ rules:
   type: copy_gate
   severity: blocker
   category: copy
-  rule: Within the opening 10 seconds, narration identifies the task and tool, with
-    a visible result or a precise result promise. A generic look-at-this opening fails.
+  rule: Within the opening 10 seconds, narration identifies the task and tool. When
+    the episode already has a demonstrable result, show it in the beat immediately
+    after the opening question instead of only promising it. Otherwise state a precise
+    result promise. Fail if character setup or abstract benefits delay that answer.
 - id: production_evidence
   type: copy_gate
   severity: blocker
@@ -59,4 +64,6 @@ rules:
   category: copy
   rule: Review every draft and revision for topic, viewer benefit, evidence and spoken
     clarity before TTS. Remove empty claims and formulaic phrasing without inventing
-    experiences. A keyword scan or self-score alone is not editorial review.
+    experiences. Check the sentences after the hook as well. Attempts, observations
+    and next actions must follow understandably; abstract benefit lists cannot replace
+    that progression. A keyword scan or self-score alone is not editorial review.

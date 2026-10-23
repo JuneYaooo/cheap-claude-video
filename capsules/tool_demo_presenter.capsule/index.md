@@ -2,7 +2,7 @@
 okf_version: '0.1'
 type: Video Capsule Bundle Index
 title: 工具实操口播与动效
-description: 以观众任务为主线，用口播、真实操作和结果展示讲清工具的用途、做法与交付。
+description: 从观众熟悉的问题切入，先展示成果，再沿实际尝试、修改与结果讲清工具做法，结合口播、实操和动效交付可复用方法。
 profile: video.okf.capsule.v1
 primary_workflow: tool_demo_explainer
 tags:
@@ -13,7 +13,7 @@ tags:
 
 # 工具实操口播与动效
 
-以观众任务为主线，用口播、真实操作和结果展示讲清工具的用途、做法与交付。
+从观众熟悉的问题切入，先展示成果，再沿实际尝试、修改与结果讲清工具做法，结合口播、实操和动效交付可复用方法。
 
 # Entry
 
