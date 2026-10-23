@@ -115,6 +115,8 @@ capsules/*.capsule/
 !capsules/repo_signal_grid.capsule/**
 !capsules/dual_role_real_screen_recording.capsule/
 !capsules/dual_role_real_screen_recording.capsule/**
+!capsules/tool_demo_presenter.capsule/
+!capsules/tool_demo_presenter.capsule/**
 !capsules/x_lai_animal_fable.capsule/
 !capsules/x_lai_animal_fable.capsule/**
 !capsules/plush_diorama_science.capsule/

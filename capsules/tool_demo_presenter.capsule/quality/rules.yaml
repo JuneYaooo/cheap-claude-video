@@ -1,0 +1,55 @@
+rules:
+- id: final_video_required
+  type: artifact_required
+  severity: blocker
+  category: final_video
+  rule: Final video must be produced before release.
+- id: copywriting_structure_contract_required
+  type: copy_gate
+  severity: blocker
+  category: copy
+  rule: Before generation, provide audience, tool, task, outcome, script, evidence
+    mapping, and an actionable delivery; align title, cover and opening.
+- id: first_three_seconds_hook_required
+  type: copy_gate
+  severity: blocker
+  category: copy
+  rule: The real first 0-3 seconds must contain concrete pain, identity pressure,
+    a counterintuitive verdict, a status/control stake, or a completion gap.
+- id: theme_comprehension
+  type: copy_gate
+  severity: blocker
+  category: copy
+  rule: Without visuals, the narration identifies the tool, task, steps and usable
+    outcome. Fail if it only describes a character or a sequence of assets.
+- id: opening_orientation
+  type: copy_gate
+  severity: blocker
+  category: copy
+  rule: Within the opening 10 seconds, narration identifies the task and tool, with
+    a visible result or a precise result promise. A generic look-at-this opening fails.
+- id: production_evidence
+  type: copy_gate
+  severity: blocker
+  category: copy
+  rule: Each generation or modification claim maps to actual input, execution and
+    output evidence. Switching prebuilt assets is not generation proof.
+- id: actionable_delivery
+  type: copy_gate
+  severity: blocker
+  category: copy
+  rule: The ending provides an actual prompt, file, entry point or reusable operation
+    demonstrated by the episode.
+- id: natural_narration
+  type: audio_gate
+  severity: blocker
+  category: audio
+  rule: Do not time-stretch individual sentences to match a reference duration. New
+    narration requires matching presenter speech.
+- id: semantic_reference_alignment
+  type: copy_gate
+  severity: blocker
+  category: copy
+  rule: Reference adaptations retain the task, viewer benefit and causal structure
+    while replacing episode assets; do not replace a tool tutorial with a character
+    showcase.

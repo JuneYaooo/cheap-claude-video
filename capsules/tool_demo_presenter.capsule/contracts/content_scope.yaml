@@ -1,0 +1,25 @@
+schema_version: capsule.content_scope.v1
+series_fixed:
+- presenter_screen_card_layout
+- narration_master_timing
+- task_evidence_sequence
+episode_variable:
+- topic
+- audience
+- tool_name
+- task
+- outcome
+- script
+- evidence
+- claims
+- prompt
+- avatar
+- voice
+- viewer_benefit
+- delivery
+forbidden_reusable_literals: []
+policies:
+  allow_series_fixed_defaults: true
+  forbid_episode_specific_defaults: true
+  active_recipe_examples_must_use_placeholders: true
+  current_run_input_may_reuse_literal: true

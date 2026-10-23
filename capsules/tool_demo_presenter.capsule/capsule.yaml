@@ -1,0 +1,48 @@
+schema_version: capsule.package.v1
+profile: video.okf.capsule.v1
+name: tool_demo_presenter
+display_name: 工具实操口播与动效
+version: 1
+status: draft
+execution_mode: preset
+category: tool_tutorial
+primary_workflow: tool_demo_explainer
+summary: 以观众任务为主线，用口播、真实操作和结果展示讲清工具的用途、做法与交付。
+capabilities:
+- real_screen_recording
+- digital_human
+- lip_sync
+- tts
+- local_assembly
+- subtitle
+tags: &id001
+- tool-demo
+- presenter
+- content-first
+when_to_use: *id001
+when_not_to_use: []
+read_order:
+  routing:
+  - index.md
+  - CARD.md
+  - contracts/input_schema.yaml
+  - contracts/content_scope.yaml
+  planning:
+  - contracts/input_schema.yaml
+  - contracts/content_scope.yaml
+  - contracts/production_contract.yaml
+  - recipes/structure.md
+  - recipes/copy.md
+  - recipes/visual.md
+  - recipes/audio.md
+  generation:
+  - contracts/runtime.yaml
+  - recipes/motion.md
+  - assets/index.yaml
+  qa:
+  - quality/rules.yaml
+  - quality/release_gates.yaml
+  learning:
+  - learning/promoted_lessons.yaml
+entrypoints:
+  preset: general_video

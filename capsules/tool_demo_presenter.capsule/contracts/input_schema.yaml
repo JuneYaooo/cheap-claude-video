@@ -1,0 +1,37 @@
+fields:
+  topic:
+    type: string
+    required: true
+    description: 本期主题
+  audience:
+    type: string
+    required: true
+    description: 受众及现实任务
+  tool_name:
+    type: string
+    required: true
+    description: 实际使用的工具
+  task:
+    type: string
+    required: true
+    description: 要完成的具体任务
+  outcome:
+    type: string
+    required: true
+    description: 可验证的产物
+  viewer_benefit:
+    type: string
+    required: true
+    description: 观众看完可做什么
+  script:
+    type: string
+    required: true
+    description: 完整自然口播
+  evidence:
+    type: array
+    required: true
+    description: 逐段输入、操作、输出与修改的真实证据
+  delivery:
+    type: string
+    required: true
+    description: 可带走的文件、提示词或操作方法
