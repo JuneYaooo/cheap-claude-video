@@ -8,3 +8,4 @@ gates:
 - evidence_alignment_required
 - motion_audio_review_required
 - presenter_visual_language
+- presenter_region_motion

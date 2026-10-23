@@ -44,3 +44,8 @@ rules:
   severity: blocker
   category: visual
   rule: 检查人物、实操、配图、对照的实际样帧与连续片段：白字描边字幕清晰且位置稳定，重点词不遮主体，材料、时间、关系、修改使用适合的图形，动画在相应语义处发生。不能用整片重复列表或开头一次性弹入代替过程解释。
+- id: presenter_region_motion
+  type: motion_gate
+  severity: blocker
+  category: motion
+  rule: 数字人出镜段须检查排除字幕和贴片的人脸/口部区域，并核对可疑帧与源片段时间映射。字幕在变或整片模型评价通过，不能代替人物局部运动检查；重复读取旧帧、口播继续而人物冻结时禁止交付。
