@@ -303,6 +303,7 @@ https://github.com/JuneYaooo/cheap-claude-video
 
 | 配方 | 适合做什么 | 主要保留内容 |
 | --- | --- | --- |
+| [`industry_workflow_explainer`](capsules/industry_workflow_explainer.capsule/CARD.md) | 行业岗位如何用 AI 完成一项重复任务 | 真实工作细节、材料到产物的因果链、作者自改、人工判断与下次复用 |
 | `plush_diorama_science` | 看不见的过程科普：某样东西是怎么来的、怎么变的 | 毛绒手办布景画风、关键词驱动分镜与动效、逐句配音与 ASR 字幕验收、Blender 本地渲染和质量门 |
 | `life_sim` | 第二人称人生模拟、动漫剧情口播 | 钩子、情绪推进、角色规则、快切节奏 |
 | `ecommerce_product_showcase` | 商品展示、种草和带货短视频 | 商品身份、卖点结构、平台语气和合规规则 |

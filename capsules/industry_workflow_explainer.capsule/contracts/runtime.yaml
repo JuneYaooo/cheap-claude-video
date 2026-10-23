@@ -1,0 +1,52 @@
+roles: {}
+output_contract:
+  final_video: required
+  has_narration: true
+video_elements:
+  fixed:
+    timing_master: narration
+    content_before_visual_planning: true
+  defaults: {}
+  user_overridable: {}
+  forbidden:
+  - fabricated_tool_interface
+  - sentence_time_stretch_to_reference
+  - unmeasured_efficiency_claim
+copywriting_structure_contract:
+  topic_to_angle_required: true
+  natural_language_review_required: true
+  hook_variants_required: 3
+  true_first_line_audit_required: true
+  viewer_pressure_required: false
+  counterintuitive_thesis_required: false
+  concrete_scene_required: true
+  cover_title_alignment_required: true
+  required_outputs:
+  - raw_topic
+  - audience_pressure
+  - common_misread
+  - viral_angle_candidates
+  - recommended_angle
+  - first_3_seconds
+  - first_20_seconds
+  - script_outline
+  - cover_text
+  - title
+  - risk_notes
+  - workflow_chain
+  - human_revision
+  - next_cycle_inputs
+  - character_count
+  - estimated_duration
+  opening_gate:
+    max_seconds: 3
+    must_contain_one_of:
+    - recognizable job situation
+    - concrete recurring task
+    - specific work friction
+    - desired work outcome
+    reject_if_only:
+    - generic AI trend
+    - soft greeting
+    - unsupported urgency
+    - unexplained slogan

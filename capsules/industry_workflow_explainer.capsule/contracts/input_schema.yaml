@@ -1,0 +1,89 @@
+fields:
+  topic:
+    type: string
+    required: true
+    description: 本期主题
+  industry:
+    type: string
+    required: true
+    description: 行业
+  role:
+    type: string
+    required: true
+    description: 具体岗位
+  audience:
+    type: string
+    required: true
+    description: 讲给谁听及其熟悉程度
+  task:
+    type: string
+    required: true
+    description: 一项重复任务及发生频率
+  old_workflow:
+    type: array
+    required: true
+    description: 原来怎样做，哪里反复翻找、核对或修改
+  materials:
+    type: array
+    required: true
+    description: 输入材料的种类、来源、可用范围和示例
+  work_constraints:
+    type: array
+    required: true
+    description: 日历、受众、模板、资源等真实约束
+  tool_name:
+    type: string
+    required: true
+    description: 本期实际工具
+  tool_capabilities:
+    type: array
+    required: true
+    description: 有依据的操作能力及验证来源
+  outcome:
+    type: string
+    required: true
+    description: 可检查的产物及主要字段
+  review_boundary:
+    type: string
+    required: true
+    description: 人员须判断和定稿的部分
+  reuse_method:
+    type: string
+    required: true
+    description: 下次保留的方法和需要替换的输入
+  target_duration:
+    type: number
+    required: false
+    description: 期望秒数；未提供时按完整工作链估算并说明
+  reference:
+    type: object
+    required: false
+    description: 参考稿、转录及可核对来源
+  approved_opening:
+    type: string
+    required: false
+    description: 已确认需保留的开头
+  script:
+    type: string
+    required: false
+    description: 已有稿件；缺省时由配方生成
+  authoring_model:
+    type: string
+    required: false
+    description: 用户指定的文案作者模型
+  avatar:
+    type: object
+    required: false
+    description: 经授权的人物与场景选择
+  voice:
+    type: object
+    required: false
+    description: 本期音色选择
+  evidence:
+    type: array
+    required: false
+    description: 制作时逐段补齐的真实操作和输出证据
+  delivery_stage:
+    type: string
+    required: false
+    description: script / storyboard / video，缺省从 script 开始

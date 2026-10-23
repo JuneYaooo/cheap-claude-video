@@ -346,3 +346,6 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+!capsules/industry_workflow_explainer.capsule/
+!capsules/industry_workflow_explainer.capsule/**

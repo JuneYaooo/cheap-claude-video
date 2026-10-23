@@ -1,0 +1,54 @@
+schema_version: capsule.package.v1
+profile: video.okf.capsule.v1
+name: industry_workflow_explainer
+display_name: 行业岗位 AI 提效讲解
+version: 1
+status: draft
+execution_mode: preset
+category: industry_explainer
+primary_workflow: tool_demo_explainer
+summary: 围绕一个岗位的重复任务，从真实材料、整理判断、具体产物到人工修改和下次复用，写出有工作细节的自然口播，并衔接实操演示。
+capabilities:
+- real_screen_recording
+- digital_human
+- tts
+- subtitle
+- local_assembly
+tags:
+- industry-workflow
+- natural-narration
+- tool-tutorial
+- digital-human
+when_to_use:
+- 讲清一个岗位如何用 AI 完成一项重复工作
+- 从行业材料和实际任务出发写工具应用口播
+- 先确认文案，再衔接数字人口播与真实操作演示
+when_not_to_use:
+- 泛行业趋势评论或工具排行榜
+- 没有任务依据的效率宣传
+- 需要替代专业人员作最终决策的内容
+read_order:
+  routing:
+  - index.md
+  - CARD.md
+  - contracts/input_schema.yaml
+  - contracts/content_scope.yaml
+  planning:
+  - contracts/input_schema.yaml
+  - contracts/content_scope.yaml
+  - contracts/production_contract.yaml
+  - recipes/structure.md
+  - recipes/copy.md
+  - recipes/visual.md
+  - recipes/audio.md
+  generation:
+  - contracts/runtime.yaml
+  - recipes/motion.md
+  - assets/index.yaml
+  qa:
+  - quality/rules.yaml
+  - quality/release_gates.yaml
+  learning:
+  - learning/promoted_lessons.yaml
+entrypoints:
+  preset: general_video

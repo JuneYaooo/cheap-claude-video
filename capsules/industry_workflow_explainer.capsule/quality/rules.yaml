@@ -1,0 +1,41 @@
+rules:
+- id: final_video_required
+  type: artifact_required
+  severity: blocker
+  category: final_video
+  rule: 成片阶段须有实际可播放视频；文案或分镜阶段不能宣称视频已完成。
+- id: copywriting_structure_contract_required
+  type: copy_gate
+  severity: blocker
+  category: copy
+  rule: 策划输出须覆盖 runtime 的文案结构字段，口播呈现一项任务从材料到产物、修改和复用的因果链。
+- id: first_three_seconds_hook_required
+  type: copy_gate
+  severity: blocker
+  category: copy
+  rule: 开头应能辨认岗位情境、具体任务、工作麻烦或目标成果，拒绝空泛 AI 趋势与未经证实的紧迫感。
+- id: grounded_workflow_required
+  type: copy_gate
+  severity: blocker
+  category: copy
+  rule: 材料、工具能力和专业说法有依据；不把示例、模型推断或未测效率当成已验证成果。
+- id: natural_copy_review_required
+  type: copy_gate
+  severity: blocker
+  category: copy
+  rule: 初稿经作者自改及实际顺读，保留已确认开头；字数口径、估计时长与测量结果区分。
+- id: human_revision_and_reuse_required
+  type: copy_gate
+  severity: blocker
+  category: copy
+  rule: 说明至少一处人工判断或修改，并明确下一轮替换的输入、保留的方法及仍须核查的内容。
+- id: evidence_alignment_required
+  type: visual_gate
+  severity: blocker
+  category: visual
+  rule: 成片中的操作、成果和修改与旁白相符；实操界面真实，关键区域与字幕可读。
+- id: motion_audio_review_required
+  type: motion_gate
+  severity: blocker
+  category: motion
+  rule: 回看静帧报警与完整连续音画；排除卡顿、口型漂移、重复帧补时长和无意义运动。
