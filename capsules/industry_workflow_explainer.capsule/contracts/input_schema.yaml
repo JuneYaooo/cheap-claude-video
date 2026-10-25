@@ -88,3 +88,19 @@ fields:
     type: string
     required: false
     description: script / storyboard / video，缺省从 script 开始
+  showcase_assets:
+    type: array
+    required: false
+    description: 可展示效果的成片、结果或对照素材；提供已有来源、可用片段、看点与比较条件，缺省时从 materials 和 evidence 中整理
+  title_display:
+    type: string
+    required: false
+    default: section
+    enum:
+    - section
+    - persistent
+    description: section 为分段标题；persistent 为本期已确认主标题全程常驻，跨场景与片尾保持可见
+  approved_title:
+    type: string
+    required: false
+    description: 已确认需逐字保留的本期主标题；采用全程标题时也用于封面

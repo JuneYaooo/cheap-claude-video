@@ -13,7 +13,7 @@ rules:
   type: copy_gate
   severity: blocker
   category: copy
-  rule: 开头应能辨认岗位情境、具体任务、工作麻烦或目标成果，拒绝空泛 AI 趋势与未经证实的紧迫感。
+  rule: 开头前 3 秒给出与本期任务相关的停留理由。有合适成果素材时，第一镜直接展示效果或真实对照，口播点明看点；没有时从听众的具体任务或麻烦切入。已确认开头优先；拒绝寒暄、空泛热点、无关自我介绍和未经证实的紧迫感。
 - id: grounded_workflow_required
   type: copy_gate
   severity: blocker
@@ -59,3 +59,18 @@ rules:
   severity: blocker
   category: copy
   rule: 新增口播与作者自改的调用输入须包含 assets/writing-reference.txt 全文；仅提供摘要、结构清单或风格要求不算完成参考。检查工作情境、细节展开和自然衔接，且没有把参考中的产品能力、个人经历或效率数字移作本期事实。已确认且未修改的稿件可直接沿用。
+- id: showcase_opening_selection
+  type: visual_gate
+  severity: blocker
+  category: visual
+  rule: 核对 opening_selection 与第一镜：有来源可核对、与主题相关且手机上能看清效果的素材时，优先 showcase_first，并检查第一帧和前 3 秒实际呈现；采用 task_first 时记录素材不适合的原因或已确认开头依据。对照须标清对象与条件，不用不同主题的复刻证明同条件等效。
+- id: presenter_supports_evidence
+  type: visual_gate
+  severity: blocker
+  category: visual
+  rule: 逐段核对画面与讲述：数字人用于判断解释、步骤衔接或缺少直接素材的抽象内容，不设固定开场和收尾；不能用人物讲话替代关键操作与成果证据。实际操作缺证据时补录，动画修改须明确标为示意。
+- id: persistent_title_when_requested
+  type: visual_gate
+  severity: blocker
+  category: visual
+  rule: 仅在 title_display 为 persistent 时检查：主标题逐字沿用已确认内容，封面一致，第一帧至最后一帧、人物段和跨场景转场均可见；不被原段落标题覆盖，不遮脸、口部、关键成果和字幕。section 模式记为不适用。

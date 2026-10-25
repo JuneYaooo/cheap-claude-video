@@ -15,3 +15,33 @@ examples:
   unsupported_claims:
   - 不宣称已经运行成功
   - 不预设节省时数
+  opening_selection:
+    mode: task_first
+    rationale: 只有任务资料，尚无可核对的成果画面，从安排冲突这项具体工作切入
+    selected_assets: []
+    first_shot_layout: 显示已授权材料中的实际冲突，或明确标注的冲突示意
+    visible_payoff: 看懂这次要解决的排期问题
+    supported_claim: 说明任务，不声称已经完成安排
+- label: 虚构示例：有两条可核对成片的制作流程讲解
+  usage: 仅示范有素材时的叙述顺序，不预置模型、主题、人物或成本结论
+  opening_selection:
+    mode: showcase_first
+    rationale: 已有完整可播放样片，观众能直接看出画面与动效，先展示再解释制作方法
+    selected_assets:
+    - source: '{原样片本地路径与来源记录}'
+      usable_range: '{从看点开始的有效起止时间}'
+      subject: '{原样片主题}'
+      comparison_conditions: '{已核实的制作条件}'
+    - source: '{复刻样片本地路径与来源记录}'
+      usable_range: '{可对照的有效起止时间}'
+      subject: '{复刻样片主题}'
+      comparison_conditions: '{与原样片相同和不同的条件}'
+    first_shot_layout: 两条样片并排原比例播放，标明各自主题与制作条件
+    visible_payoff: 先看懂两条成片的表现及方法迁移
+    supported_claim: 展示已观察到的结果，不宣称质量等效或未经测量的成本比例
+  workflow:
+  - 先展示样片，再接要解决的成本或复现问题
+  - 展示真实工具与安装步骤
+  - 在解释人工判断的段落穿插人物
+  - 用明确标注的修改示意或真实改前改后讲清如何调整
+  - 展示保存的方法与代码，说明下次替换哪些输入

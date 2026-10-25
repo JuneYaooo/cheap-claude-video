@@ -19,10 +19,14 @@ modality_contracts:
     hook_candidates_min: 3
     first_3_seconds_audit_required: true
     title_cover_opening_alignment_required: true
+    opening_asset_selection_required: true
   visual:
     visual_component_library_required: true
     contact_sheet_review_required: true
     source_identity_forbidden: true
+    showcase_first_when_evidence_suitable: true
+    presenter_fixed_opening_required: false
+    persistent_title_review_when_enabled: true
   motion:
     motion_plan_required: true
     first_three_seconds_motion_or_cut_required: true

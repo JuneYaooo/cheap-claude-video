@@ -11,3 +11,6 @@ gates:
 - presenter_region_motion
 - authoring_model_execution
 - full_writing_reference_used
+- showcase_opening_selection
+- presenter_supports_evidence
+- persistent_title_when_requested

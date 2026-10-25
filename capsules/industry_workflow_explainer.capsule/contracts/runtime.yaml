@@ -6,7 +6,9 @@ video_elements:
   fixed:
     timing_master: narration
     content_before_visual_planning: true
-  defaults: {}
+  defaults:
+    opening_selection_policy: showcase_first_when_evidence_suitable
+    presenter_placement: explanation_as_needed
   user_overridable: {}
   forbidden:
   - fabricated_tool_interface
@@ -38,6 +40,8 @@ copywriting_structure_contract:
   - next_cycle_inputs
   - character_count
   - estimated_duration
+  - opening_selection
+  - visual_evidence_plan
   opening_gate:
     max_seconds: 3
     must_contain_one_of:
@@ -45,8 +49,27 @@ copywriting_structure_contract:
     - concrete recurring task
     - specific work friction
     - desired work outcome
+    - visible relevant result or comparison with a clear viewing point
     reject_if_only:
     - generic AI trend
     - soft greeting
     - unsupported urgency
     - unexplained slogan
+  opening_selection_contract:
+    modes:
+    - showcase_first
+    - task_first
+    required_fields:
+    - mode
+    - rationale
+    - selected_assets
+    - first_shot_layout
+    - visible_payoff
+    - supported_claim
+    asset_fields:
+    - source
+    - usable_range
+    - subject
+    - comparison_conditions
+    task_first_allows_empty_selected_assets: true
+    approved_opening_has_priority: true

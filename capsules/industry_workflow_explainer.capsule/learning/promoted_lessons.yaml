@@ -1,1 +1,7 @@
-lessons: []
+lessons:
+- id: lead_with_visible_results
+  status: promoted
+  rule: 成片、复刻对照和改前改后能直接体现看点时，先展示有效片段，再解释成本、任务和制作方法。展示来源、对象与条件须清楚；画面已经证明的内容不再用长铺垫重复讲一遍。
+- id: presenter_between_evidence_beats
+  status: promoted
+  rule: 数字人按讲述需要穿插，用于解释判断和连接步骤；素材有说服力时让素材占据画面。人物不固定开场，也不能代替真实操作和结果证据。

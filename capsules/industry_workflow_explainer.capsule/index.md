@@ -2,7 +2,7 @@
 okf_version: '0.1'
 type: Video Capsule Bundle Index
 title: 行业岗位 AI 提效讲解
-description: 以完整参考口播引导岗位讲解，从重复任务的材料、判断与具体产物讲到人工修改和下次复用，并衔接真实操作演示。
+description: 有直观成果时先展示效果，再讲任务、制作方法、人工修改与复用；没有合适成果时从具体工作切入，人物按解释需要穿插。
 profile: video.okf.capsule.v1
 primary_workflow: tool_demo_explainer
 tags:
@@ -14,7 +14,7 @@ tags:
 
 # 行业岗位 AI 提效讲解
 
-以完整参考口播引导岗位讲解，从重复任务的材料、判断与具体产物讲到人工修改和下次复用，并衔接真实操作演示。
+有直观成果时先展示效果，再讲任务、制作方法、人工修改与复用；没有合适成果时从具体工作切入，人物按解释需要穿插。
 
 # Entry
 

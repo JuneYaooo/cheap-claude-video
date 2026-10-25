@@ -2,12 +2,12 @@ schema_version: capsule.package.v1
 profile: video.okf.capsule.v1
 name: industry_workflow_explainer
 display_name: 行业岗位 AI 提效讲解
-version: 1
+version: 2
 status: draft
 execution_mode: preset
 category: industry_explainer
 primary_workflow: tool_demo_explainer
-summary: 以完整参考口播引导岗位讲解，从重复任务的材料、判断与具体产物讲到人工修改和下次复用，并衔接真实操作演示。
+summary: 有直观成果时先展示效果，再讲任务、制作方法、人工修改与复用；没有合适成果时从具体工作切入，人物按解释需要穿插。
 capabilities:
 - real_screen_recording
 - digital_human
